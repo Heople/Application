@@ -34,7 +34,9 @@
           <input type="checkbox" name="" value=""> Se souvenir de moi
         </div>
 
-        <a href="home.html"><button id="button-connect" class="ui button">Valier</button></a>
+        <!-- <a href="home.html"> -->
+          <button id="button-connect" class="ui button">Valier</button>
+        <!-- </a> -->
         <span id="message-login"></span>
       </div>
 
@@ -43,6 +45,34 @@
   <script type="text/javascript" src="cordova.js"></script>
   <script src="res/jquery/jquery-3.3.1.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+  document.addEventListener("deviceready", function(){
+
+
+$('#button-connect').click(function(){
+  console.log("truc");
+  var url = "http://localhost:3000/php/authentification.php";
+  var email = $.trim($('#email').val());
+  var mdp = $.trim($('#mdp').val());
+
+  $.ajax({
+    type: "POST", crossDomain: true, cache: false,
+    url: url,
+    succes: function(retour){
+      if (retour == "succes") {
+        $('#message').text("ok c'est good");
+      }
+
+      else if (data == "error") {
+        $('#message').text("ok c'est good");
+      }
+    }
+  });
+});
+
+
+});
+  </script>
 </body>
 
 </html>
