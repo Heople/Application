@@ -25,54 +25,37 @@
 </head>
 
 <body>
-
-  <img id="logo-login" src="img/logo.png" alt="Logo e-Kiné">
-      <div class="input-container">
-        <i class="far fa-user"></i><input id="input-user" type="text" placeholder="Email"><br>
-        <i class="fas fa-unlock"></i><input id="input-password" type="password" placeholder="Mot de passe" ><br>
-        <div class="se-souvenir">
-          <input type="checkbox" name="" value=""> Se souvenir de moi
-        </div>
-
-        <!-- <a href="home.html"> -->
-          <button id="button-connect" class="ui button">Valier</button>
-        <!-- </a> -->
-        <span id="message-login"></span>
+    <div class="home-container">
+      <a href="index.html" style="position: absolute; top: 10px; left: 15px; color: #72c5c1;"><i class="fas fa-sign-in-alt fa-rotate-180"></i> Se déconnecter</a>
+      <!-- <img id="logo-home" src="img/logo.png" alt="Logo e-kiné"> -->
+      <h1 class="h1-home">Bienvenue sur e-kiné ! </h1>
+      <p class="description-home">Retrouvez vos exercices, vos informations, vos rendez-vous.</p>
+      <div class="exercice-menu">
+        <a href="exercice.html"><div class="menu-exercice-item">Triple salto du bras droit<i class="fas fa-chevron-right"></i></div></a>
+        <a href="exercice.html"><div class="menu-exercice-item">Triple salto du bras gauche<i class="fas fa-chevron-right"></i></div></a>
+        <a href="exercice.html"><div class="menu-exercice-item">Contraction arrière de la fesse gauche<i class="fas fa-chevron-right"></i></div></a>
+        <a href="exercice.html"><div class="menu-exercice-item">Contraction arrière de la fesse droite<i class="fas fa-chevron-right"></i></div></a>
+        <a href="exercice.html"><div class="menu-exercice-item">Touilette acrobatique<i class="fas fa-chevron-right"></i></div></a>
+        <a href="exercice.html"><div class="menu-exercice-item">Retournement de la loutre<i class="fas fa-chevron-right"></i></div></a>
       </div>
 
+      <button class="demarrer">Démarrer le programme</button>
+      <nav>
+        <a href=""><i class="far fa-user"></i></a>
+        <a href="home.html"><i class="fas fa-list-ul nav-active"></i></a>
+        <a href="meskine.html"><i class="fas fa-user-md"></i></a>
+        <a href=""><i class="fas fa-calendar-check"></i></a>
+      </nav>
+    </div>
+
+
+    <div class="background-img">
+    </div>
 
 
   <script type="text/javascript" src="cordova.js"></script>
   <script src="res/jquery/jquery-3.3.1.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript">
-  document.addEventListener("deviceready", function(){
-
-
-$('#button-connect').click(function(){
-  console.log("truc");
-  var url = "http://localhost:3000/php/authentification.php";
-  var email = $.trim($('#email').val());
-  var mdp = $.trim($('#mdp').val());
-
-  $.ajax({
-    type: "POST", crossDomain: true, cache: false,
-    url: url,
-    succes: function(retour){
-      if (retour == "succes") {
-        $('#message').text("ok c'est good");
-      }
-
-      else if (data == "error") {
-        $('#message').text("ok c'est good");
-      }
-    }
-  });
-});
-
-
-});
-  </script>
 </body>
 
 </html>
