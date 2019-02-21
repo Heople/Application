@@ -17,52 +17,51 @@
     * Create your own at http://cspisawesome.com
     -->
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; connect-src * ; img-src *;script-src * 'unsafe-inline'; font-src * ; media-src *">
   <link rel="stylesheet" type="text/css" href="./css/index.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-  <script type="text/javascript">
-            window.addEventListener("touchstart", function(e) {    e.preventDefault();}, false);window.addEventListener("touchmove", function(e) {    e.preventDefault();}, false);
-        </script>
 
 </head>
 
 <body>
   <h1 class="h1-meskine">Mes Kinésithérapeutes</h1>
+  <p class="message-meskine">Retrouvez toutes les informations de vos Kinésithérapeutes</p>
   <div class="super-kine-container">
 
     <div class="kine-container">
       <p class="nom-kine">
         Nom Kinésithérapeute 1<i class="fas fa-chevron-up"></i>
       </p>
-        <img class="photo-kine" src="https://www.sciencesetavenir.fr/assets/img/2018/07/04/cover-r4x3w1000-5b3d39303710c-le-visage-de-jules-cesar-reconstitue-en-3d.jpg" alt="Photo kiné">
-      <p class="adresse">Addresse :10 Rue André Chenier, 78000 Versaille</p>
-      <p class="email-kine">Email : email1@gmail.com</p>
-      <p class="telephone-kine">Téléphone : 07 81 93 14 33</p>
+      <div class="info-container">
+        <img class="photo-kine" src="https://sadanduseless.b-cdn.net/wp-content/uploads/2014/09/harold1.jpg" alt="Photo kiné">
+
+        <p class="adresse">Addresse :10 Rue André Chenier, 78000 Versaille</p>
+        <p class="email-kine">Email : email1@gmail.com</p>
+        <p class="telephone-kine">Téléphone : 07 81 93 14 33</p>
+      </div>
+
     </div>
 
     <div class="kine-container">
       <p class="nom-kine">Nom Kinésithérapeute 2<i class="fas fa-chevron-up"></i>
       </p>
-      <img class="photo-kine" src="https://www.sciencesetavenir.fr/assets/img/2018/07/04/cover-r4x3w1000-5b3d39303710c-le-visage-de-jules-cesar-reconstitue-en-3d.jpg" alt="Photo kiné">
-      <p class="adresse">Adresse : 23 Avenue de la Chiure, 78000 Versaille</p>
-      <p class="email-kine">email :email2@gmail.com</p>
-      <p class="telephone-kine">Téléphone : 07 22 73 64 28</p>
-    </div>
+      <div class="info-container">
+        <img class="photo-kine" src="https://i.kym-cdn.com/entries/icons/original/000/016/546/hidethepainharold.jpg" alt="Photo kiné">
+        <p class="adresse">Adresse : 23 Avenue de la Chiure, 78000 Versaille</p>
+        <p class="email-kine">email :email2@gmail.com</p>
+        <p class="telephone-kine">Téléphone : 07 22 73 64 28</p>
+      </div>
 
-    <div class="kine-container">
-      <p class="nom-kine">Nom Kinésithérapeute 3<i class="fas fa-chevron-down"></i></p>
     </div>
 
   </div>
   <nav>
-    <a href=""><i class="far fa-user"></i></a>
+    <a href="compte.html"><i class="far fa-user"></i></a>
     <a href="home.html"><i class="fas fa-list-ul"></i></a>
     <a href="meskine.html"><i class="fas fa-user-md nav-active"></i></a>
     <a href=""><i class="fas fa-calendar-check"></i></a>
   </nav>
-  </div>
-
 
 
 
@@ -71,8 +70,24 @@
 
 
   <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
   <script src="res/jquery/jquery-3.3.1.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript">
+    $('.kine-container').click(function(){
+      var below = $(this).children('.info-container');
+      var iconClass = $(this).children('p').children('i');
+      console.log(iconClass);
+      $(below).toggle(200);
+      if (!iconClass.hasClass('inverse')) {
+        iconClass.addClass('inverse');
+      }
+
+      else {
+        iconClass.removeClass('inverse');
+      }
+    });
+  </script>
 
 
 </body>
