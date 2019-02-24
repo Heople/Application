@@ -24,19 +24,39 @@
 
 </head>
 
-<body>
-    <div class="home-container">
+<body ng-app="myapp">
+
+
+    <div class="home-container" ng-controller="exercice">
+      <div class="exercice">
+        <i class="fas fa-times exercice-retour"></i>
+        <div class="info-exercice-container">
+          <!-- <p>Name : <input type="text" ng-model="name"></p> -->
+          <h1>Nom de l'exercice : <br>{{name}}</h1>
+          <h2>Description de l'exercice: <br> {{description}}</h2>
+          <ng-youtube-embed
+              video="videoURL"
+              autoplay="true"
+              color="white"
+              disablekb="true"
+              end="20"
+              class="video">
+          </ng-youtube-embed>
+        </div>
+      </div>
+
+
       <a href="index.html" style="position: absolute; top: 10px; left: 15px; color: #72c5c1;"><i class="fas fa-sign-in-alt fa-rotate-180"></i> Se déconnecter</a>
       <!-- <img id="logo-home" src="img/logo.png" alt="Logo e-kiné"> -->
       <h1 class="h1-home">Bienvenue sur e-kiné ! </h1>
       <p class="description-home">Retrouvez vos exercices, vos informations, vos rendez-vous.</p>
-      <div class="exercice-menu">
-        <a href="exercice.html"><div class="menu-exercice-item">Triple salto du bras droit<i class="fas fa-chevron-right"></i></div></a>
-        <a href="exercice.html"><div class="menu-exercice-item">Triple salto du bras gauche<i class="fas fa-chevron-right"></i></div></a>
-        <a href="exercice.html"><div class="menu-exercice-item">Contraction arrière de la fesse gauche<i class="fas fa-chevron-right"></i></div></a>
-        <a href="exercice.html"><div class="menu-exercice-item">Contraction arrière de la fesse droite<i class="fas fa-chevron-right"></i></div></a>
-        <a href="exercice.html"><div class="menu-exercice-item">Touilette acrobatique<i class="fas fa-chevron-right"></i></div></a>
-        <a href="exercice.html"><div class="menu-exercice-item">Retournement de la loutre<i class="fas fa-chevron-right"></i></div></a>
+      <div class="exercice-menu" >
+<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras droit<i class="fas fa-chevron-right"></i></div>
+<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras gauche<i class="fas fa-chevron-right"></i></div>
+<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse droite arrière<i class="fas fa-chevron-right"></i></div>
+<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse gauche arrière<i class="fas fa-chevron-right"></i></div>
+<div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Touilette acrobatique<i class="fas fa-chevron-right"></i></div>
+<div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Retournement de la loutre<i class="fas fa-chevron-right"></i></div>
       </div>
 
       <button class="demarrer">Démarrer le programme</button>
@@ -55,6 +75,75 @@
 
   <script type="text/javascript" src="cordova.js"></script>
   <script src="res/jquery/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js'></script>
+  <script type="text/javascript">
+
+  var app=angular.module('myapp', ['ngRoute', 'ngYoutubeEmbed']);
+  app.controller('exercice',function($scope) {
+
+    $nom ="";
+    $scope.videoURL = 'https://www.youtube.com/watch?v=XWEkGT7XP08';
+    $(".menu-exercice-item").click(function(){
+      $(".exercice").css("display", "block");
+        $nom = $(this).text();
+        // console.log($nom);
+        $scope.name = $nom;
+    });
+
+    $(".exercice-retour").click(function(){
+      $(".exercice").css("display", "none");
+      $(".video").pause();
+    });
+
+    $scope.nom = "qzdqd";
+    $scope.description ="qzdqz";
+
+
+    $scope.exercices=[
+        {nom: "Triple salto du bras gauche", description:"Faire tournoyer son bras gauche dans le sens antéchronologique des aiguilles d'une montre.", lien: "https://www.youtube.com/watch?v=XWEkGT7XP08"},
+        {nom: "Triple salto du bras droit", description:"Faire tournoyer son bras droit dans le sens antéchronologique des aiguilles d'une montre.", lien: "https://www.youtube.com/watch?v=o85w80g2Aq4"},
+        {nom: "Contraction de la fesse droite arrière", description:"Contracter la fesse droite arrière.", lien: "https://www.youtube.com/watch?v=y9eFk8TuV9k"},
+        {nom: "Contraction de la fesse gauche arrière", description:"Contracter la fesse gauche arrière.", lien: "https://www.youtube.com/watch?v=PJielywHIjY"},
+    ]
+
+    $scope.setExercice = function(x){
+      $scope.name = x;
+      angular.forEach($scope.exercices, function(item){
+            if (item.nom == x) {
+                $scope.description = item.description;
+                $scope.video = item.video;
+                $scope.videoURL = item.lien;
+
+            }
+
+          });
+    };
+
+
+
+
+
+
+
+
+  // $scope.Truc = function(val) {
+  //     angular.forEach($scope.exercices, function(item){
+  //       if (item.nom == val) {
+  //           // console.log(item.description);
+  //           $scope.nom = item.nom;
+  //           $scope.description = item.description;
+  //
+  //
+  //       }
+  //
+  //     });
+  //
+  // }
+});
+
+  </script>
   <script type="text/javascript" src="js/index.js"></script>
 </body>
 

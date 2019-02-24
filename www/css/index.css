@@ -137,6 +137,32 @@ nav > a > i{
   color: #72c5c1;
 }
 
+.exercice{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 998;
+  display: none;
+}
+
+.exercice-retour{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  color: white;
+  font-size: 30px;
+}
+
+.info-exercice-container{
+
+}
+
 .exercice-menu{
   width: 80%;
   height: 200px;
@@ -144,7 +170,7 @@ nav > a > i{
   margin: 0 auto !important;
 }
 
-.exercice-menu > a > div{
+.exercice-menu >  div{
   width: 100%;
   height: 45px;
   line-height: 42px;
