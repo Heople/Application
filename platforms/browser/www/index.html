@@ -49,44 +49,54 @@
   document.addEventListener("deviceready", function(){
 
 $('#button-connect').click(function(){
-  console.log("truc");
-  // var url = "http://localhost/php/authentification.php";
-  var url = "http://192.168.0.28:80/e-kiné/www/php/authentification.php";
+  // console.log("truc");
+  // var url = "http://o-samy.000webhostapp.com/authentification.php";
+  var url = "http://samyouadhi.fr/authentification.php";
   var a = "admin";
   var b = "admin";
   var email = $.trim($('#input-email').val());
   var mdp = $.trim($('#input-password').val());
   var emailVerify = new RegExp('^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$');
-  // $('#message-login').html('Non');
+  console.log(email);
 
-  if ( !email.length && !mdp.length ) {
-    $('#message-login').html('Veuillez remplir les champs');
-  }
-
-  else {
-    if (email == a && mdp == b) {
-      window.location.replace("home.html");
-    }
-
-    else {
-      $('#message-login').html('Identifiant ou mot de passe incorrect');
-    }
-
-  }
+  // if ( !email.length && !mdp.length ) {
+  //   $('#message-login').html('Veuillez remplir les champs');
+  // }
+  //
+  // else {
+  //   if (email == a && mdp == b) {
+  //     window.location.replace("home.html");
+  //   }
+  //
+  //   else {
+  //     $('#message-login').html('Identifiant ou mot de passe incorrect');
+  //   }
+  //
+  // }
 
   // $.ajax({
-  //   type: "POST", crossDomain: true, cache: false,
-  //   url: url,
-  //   success: function(retour){
-  //     if (retour == "succes") {
-  //       alert("Log");
-  //     }
   //
-  //     else if (retour == "error") {
-  //       alert("Log");
-  //     }
-  //   }
+  //   )}
   // });
+
+
+  $.ajax({
+    type: "POST", crossDomain: true, cache: false,
+    url: url,
+    data: {
+      email: email,
+      mdp: mdp
+    },
+    success: function(retour){
+      $('#message-login').html(retour);
+      // if (retour == "succes") {
+      //   alert("Log");
+      // }
+      //
+      // else if (retour == "error") {
+      //   alert("Log");
+    },
+  });
 
   // $.ajax({
   //   type: "Post",
