@@ -21,6 +21,7 @@
   <link rel="stylesheet" type="text/css" href="./css/index.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
 
 </head>
 
@@ -32,15 +33,17 @@
     <p class="descriptif">patient depuis le 04/12/2018</p>
     <div class="modifiables">
       <span>Cliquez sur le bouton pour modifier un champs</span>
-      <p>email : <br><input type="text" ng-model="on" name="" value="rodrigus.anthonux@gmail.com"><button type="button" ng-disabled="!on" name="button"><i class="fas fa-pencil-alt"></i></button></p>
-      <p>Anniversaire : <br><input type="date" ng-model="on" name="" value="1998-12-04"><button type="button" ng-disabled="!on" name="button"><i class="fas fa-pencil-alt"></i></button></p>
-      <p>Téléphonne : <br><input type="text" ng-model="on" name="" value="06 23 45 89 32"><button type="button" ng-disabled="!on" name="button"><i class="fas fa-pencil-alt"></i></button></p>
+      <p>email : <br><input type="text" ng-model="on" name="" value="rodrigus.anthonux@gmail.com" ng-disabled="on"><button type="button"  name="button"><i class="fas fa-pencil-alt"></i></button></p>
+      <p>Anniversaire : <br><input type="date" ng-model="on" name="" value="1998-12-04"><button type="button" ng-disabled="on" name="button"><i class="fas fa-pencil-alt"></i></button></p>
+      <p>Téléphonne : <br><input type="text" ng-model="on" name="" value="06 23 45 89 32"><button type="button" ng-disabled="on" name="button"><i class="fas fa-pencil-alt"></i></button></p>
 
       <p class="antecedent">Antécédents</p>
-      <textarea name="name" rows="8" cols="40" value="Double croisement du dragon qui fait mal."></textarea>
+      <textarea name="name" rows="8" cols="35">Genoux qui fait mal depuis 8 ans, impossibilité de se pencher à plus de 20°. Exercice d'assouplissement a envisager.</textarea>
 
 
     </div>
+
+    <button class="enregistrer" type="button" name="button">Enregistrer</button>
 
 
   </div>

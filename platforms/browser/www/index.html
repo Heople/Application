@@ -28,16 +28,14 @@
 
   <img id="logo-login" src="img/logo.png" alt="Logo e-Kiné">
       <div class="input-container">
-        <i class="far fa-user"></i><input id="input-email" type="text" placeholder="Email"><br>
+        <i class="far fa-user"></i><input id="input-email" type="text" placeholder="Identifiant"><br>
         <i class="fas fa-unlock"></i><input id="input-password" type="password" placeholder="Mot de passe" ><br>
         <div class="se-souvenir">
           <input type="checkbox" name="" value=""> Se souvenir de moi
         </div>
 
-        <!-- <a href="home.html"> -->
           <button id="button-connect" class="ui button">Valier</button>
-        <!-- </a> -->
-        <span id="message-login">ready</span>
+        <span id="message-login">Ready</span>
       </div>
 
 
@@ -56,47 +54,42 @@ $('#button-connect').click(function(){
   var b = "admin";
   var email = $.trim($('#input-email').val());
   var mdp = $.trim($('#input-password').val());
-  var emailVerify = new RegExp('^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$');
   console.log(email);
 
-  // if ( !email.length && !mdp.length ) {
-  //   $('#message-login').html('Veuillez remplir les champs');
-  // }
-  //
-  // else {
-  //   if (email == a && mdp == b) {
-  //     window.location.replace("home.html");
-  //   }
-  //
-  //   else {
-  //     $('#message-login').html('Identifiant ou mot de passe incorrect');
-  //   }
-  //
-  // }
+  if ( !email.length && !mdp.length ) {
+    $('#message-login').html('Veuillez remplir les champs');
+  }
+
+  else {
+    if (email == a && mdp == b) {
+      window.location.replace("home.html");
+    }
+
+    else {
+      $('#message-login').html('Identifiant ou mot de passe incorrect');
+    }
+
+  }
+
+
 
   // $.ajax({
-  //
-  //   )}
-  // });
-
-
-  $.ajax({
-    type: "POST", crossDomain: true, cache: false,
-    url: url,
-    data: {
-      email: email,
-      mdp: mdp
-    },
-    success: function(retour){
-      $('#message-login').html(retour);
+  //   type: "POST", crossDomain: true, cache: false,
+  //   url: url,
+  //   data: {
+  //     email: email,
+  //     mdp: mdp
+  //   },
+  //   success: function(retour){
+  //     $('#message-login').html(retour);
       // if (retour == "succes") {
       //   alert("Log");
       // }
       //
       // else if (retour == "error") {
       //   alert("Log");
-    },
-  });
+  //   },
+  // });
 
   // $.ajax({
   //   type: "Post",
