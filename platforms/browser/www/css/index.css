@@ -12,8 +12,6 @@ html{
 body{
   margin: 0;
   padding: 0;
-  background-image: url("../img/login-background.svg");
-  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,10 +19,6 @@ body{
   padding-bottom: 70px;
   height: 100vh;
   font-family: 'Abel', sans-serif;
-  /* background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
-
 }
 
 a{
@@ -36,8 +30,11 @@ a{
   overflow: hidden;
 }
 
-.background-login{
+/* --------- LOGIN PAGE ---------*/
 
+.background-login{
+  background-image: url("../img/login-background.svg");
+  background-size: cover;
 }
 
 #logo-login{
@@ -121,6 +118,9 @@ a{
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.11);
 }
 
+
+/* --------- NAVBAR --------- */
+
 nav{
   position: absolute;
   bottom: 0;
@@ -144,6 +144,66 @@ nav > a > i{
 .nav-active{
   color: #72c5c1;
 }
+
+/* ---------- HOME PAGE --------- */
+
+.home-container{
+  z-index: 2;
+  margin: 25% 0 0 0;
+}
+
+.h1-home{
+  display: inline;
+  width: 50%;
+  color: rgba(255,255,255,1);
+  margin: 175px 0 0 0;
+  padding-left: 10px;
+  font-size: 6vh;
+}
+
+.description-home{
+  width: 350px;
+  padding-left: 10px;
+  color: black;
+  margin: 0 0 40px 0;
+  font-size: 3vh;
+}
+
+.exercice-menu{
+  width: 80%;
+  height: 200px;
+  overflow-y: scroll;
+  margin: 0 auto !important;
+}
+
+.exercice-menu >  div{
+  width: 100%;
+  height: 45px;
+  line-height: 42px;
+  margin-top: 10px;
+  font-size: 16px;
+  padding-left: 10px;
+  color: white;
+  background-color: rgba(114, 197, 193, 0.63);
+  border-radius: 3px;
+
+}
+
+.demarrer{
+  display: block;
+  width: 75%;
+  height: 45px;
+  line-height: 42px;
+  margin: 8% auto;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(47, 89, 123, 0.8);
+  border-radius: 3px;
+  border: none;
+  box-shadow: -2px 19px 24px 0px rgba(0,0,0, 0.3);
+}
+
+/* ---------- OVERLAY EXERCICES SUR LA HOME --------- */
 
 .exercice{
   width: 100%;
@@ -207,83 +267,47 @@ nav > a > i{
   font-size: 28px;
 }
 
+/* --------- PAGE MES KINE ---------*/
 
-.exercice-menu{
-  width: 80%;
-  height: 200px;
-  overflow-y: scroll;
-  margin: 0 auto !important;
+.background-kine{
+  background-color: #67C6C0;
 }
 
-.exercice-menu >  div{
-  width: 100%;
-  height: 45px;
-  line-height: 42px;
-  margin-top: 10px;
-  font-size: 16px;
-  padding-left: 10px;
-  color: white;
-  background-color: rgba(114, 197, 193, 0.63);
-  border-radius: 3px;
-
+.separateur-kine{
+  width: 20%;
+  height: 2px;
+  background-color: white;
+  margin: 20px 0;
 }
 
-.demarrer{
-  display: block;
-  width: 75%;
-  height: 45px;
-  line-height: 42px;
-  margin: 8% auto;
-  font-size: 16px;
-  color: white;
-  background-color: rgba(47, 89, 123, 0.8);
-  border-radius: 3px;
-  border: none;
-  box-shadow: -2px 19px 24px 0px rgba(0,0,0, 0.3);
+.h1-meskine{
+ margin: 40px 0 0 0;
+ color: white;
+ font-size: 1.7em;
 }
-
-.enregistrer{
-  display: block;
-  width: 75%;
-  height: 45px;
-  line-height: 42px;
-  margin: 8% auto;
-  font-size: 16px;
-  color: white;
-  background-color: rgba(47, 89, 123, 0.8);
-  border-radius: 3px;
-  border: none;
-  box-shadow: -2px 19px 24px 0px rgba(0,0,0, 0.3);
-}
-
 
 .super-kine-container{
   z-index: 2;
   width: 100%;
-  height: 80vh;
   overflow-y: scroll;
+  font-family: "Calibri";
 }
 
 .kine-container{
-  width: 80%;
-  height: calc(auto + 50px);
-  margin: 0 auto 40px auto;
-  background-color: lightgrey;
-  border-radius: 3px;
-  box-shadow: -2px 19px 24px 0px rgba(0,0,0, 0.3);
-}
-
-.kine-container p{
-  color: black;
-  padding-left: 20px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto 0 auto;
+  background-color: white;
+  border-radius: 9px;
+  padding-top: 25px;
 }
 
 .photo-kine{
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
-  margin: 15px auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 
 .img-kine{
@@ -295,48 +319,72 @@ nav > a > i{
 
 }
 
-.h1-meskine{
- margin: 60px 0 10px 0;
- color: white;
-}
-
 .nom-kine{
   width: 100%;
   height: 40px;
-  background-color: #72c5c1;
-  margin: 0;
+  text-align: center;
+  margin: 10px 0;
   font-weight: bold;
-  line-height: 38px;
-  padding-left: 10px;
-  border-bottom: #c4c4c4 1px solid;
-  font-size: 15px;
+  font-size: 17px;
   border-radius: 3px 3px 0 0;
+  color: #878787 !important;
 }
 
-.nom-kine i{
-  position: relative;
-  left: 30%;
-}
-
-.inverse{
+/* .inverse{
   transform: rotate(180deg);
-}
+} */
 
 .info-container{
-  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  border-top: 1px solid #5AA8A0;
 }
+
+.info-container > p {
+  width: 50%;
+  height: 75px;
+  padding: 0 10px 10px 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #5AA8A0;
+}
+
+.info-container > p > i{
+  margin: 10px;
+  color: #5AA8A0;
+  font-size: 18px;
+}
+
+.separateur2{
+  display: block;
+  width: 1px;
+  height: 100px;
+  background-color: #5AA8A0;
+}
+
+.telephone-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: rgba(90, 168,160,0.3);
+  height: 80px;
+  border-radius: 0 0 9px 9px;
+  color: #45847C;
+}
+
+.telephone-container i {
+  color: #3A6D67;
+  margin-right: 10px;
+  transform: rotate(90deg);
+}
+
 
 .info-container ul {
   font-size: 16px;
   list-style: none;
-}
-
-.message-meskine{
-  width: 75%;
-  margin: 0 auto 25px auto;
-  color: white;
-  font-size: 18px;
-
 }
 
 .exercice-menu i{
@@ -355,40 +403,6 @@ nav > a > i{
   margin: 0;
   padding: 0;
   display: inline-block;
-}
-
-
-.background-img{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url("../img/logo.png");
-  background-repeat: no-repeat;
-  background-size: 75%;
-  background-position: 160px 20px;
-  opacity: 0.2;
-}
-
-.home-container{
-  z-index: 2;
-  margin: 25% 0 0 0;
-}
-
-.h1-home{
-  display: inline;
-  width: 50%;
-  color: rgba(255,255,255,1);
-  margin: 175px 0 0 0;
-  padding-left: 10px;
-  font-size: 6vh;
-}
-
-.description-home{
-  width: 350px;
-  padding-left: 10px;
-  color: white;
-  margin: 0 0 40px 0;
-  font-size: 3vh;
 }
 
 .h1-compte{
@@ -443,4 +457,18 @@ nav > a > i{
 
 textarea{
   resize: none;
+}
+
+#button-enregistrer{
+  display: block;
+  width: 75%;
+  height: 45px;
+  line-height: 42px;
+  margin: 8% auto;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(47, 89, 123, 0.8);
+  border-radius: 3px;
+  border: none;
+  box-shadow: -2px 19px 24px 0px rgba(0,0,0, 0.3);
 }
