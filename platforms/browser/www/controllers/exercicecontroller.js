@@ -1,11 +1,11 @@
 
-  var app=angular.module('myapp', ['ngRoute', 'ngYoutubeEmbed']);
-  app.controller('exercice',function($scope) {
+  var app = angular.module('ExerciceCompletion', ['ngRoute', 'ngYoutubeEmbed']);
+  app.controller('ExerciceController',function($scope) {
 
     $scope.name = "Triple salto du bras gauche";
     $scope.description ="Faire tournoyer son bras gauche dans le sens antéchronologique des aiguilles d'une montre.";
     $scope.videoURL = 'https://www.youtube.com/watch?v=XWEkGT7XP08';
-    
+
 
     $(".exercice-retour").click(function(){
       $(".exercice").css("display", "none");
@@ -20,12 +20,12 @@
         {nom: "Contraction de la fesse droite arrière", description:"Contracter la fesse droite arrière.", lien: "https://www.youtube.com/watch?v=y9eFk8TuV9k"},
         {nom: "Contraction de la fesse gauche arrière", description:"Contracter la fesse gauche arrière.", lien: "https://www.youtube.com/watch?v=PJielywHIjY"},
     ]
-      
-      
+
+
     $(".menu-exercice-item").click(function(){
       $(".exercice").css("display", "block");
         $scope.name = $(this).text();
-    });  
+    });
 
     $scope.setExercice = function(x){
     $scope.name = x;
@@ -38,8 +38,8 @@
         }
 
     });
-        
-        
-        
+
+
+
     };
 });

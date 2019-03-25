@@ -24,8 +24,8 @@
 
 </head>
 
-<body ng-app="myapp">
-    <div class="home-container" ng-controller="exercice">
+<body ng-app="ExerciceCompletion">
+    <div class="home-container" ng-controller="ExerciceController">
       <div class="exercice">
         <i class="fas fa-times exercice-retour"></i>
         <div class="info-exercice-container">
@@ -45,7 +45,7 @@
                 height="200px"
                   >
             </ng-youtube-embed>
-          </div>
+          </div> 
 
         </div>
       </div>
@@ -64,7 +64,7 @@
 <div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Retournement de la loutre<i class="fas fa-chevron-right"></i></div>
       </div>
 
-      <button class="demarrer">Démarrer le programme</button>
+      <a href="programme.html"><button class="demarrer">Démarrer le programme</button></a>
       <nav>
         <a href="compte.html"><i class="far fa-user"></i></a>
         <a href="home.html"><i class="fas fa-list-ul nav-active"></i></a>
@@ -81,8 +81,8 @@
   <script type="text/javascript" src="cordova.js"></script>
   <script src="res/jquery/jquery-3.3.1.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js'></script>
-  <script src='https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script>
   <script type="text/javascript" src="controllers/exercicecontroller.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </body>

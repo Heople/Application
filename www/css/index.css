@@ -472,3 +472,21 @@ textarea{
   border: none;
   box-shadow: -2px 19px 24px 0px rgba(0,0,0, 0.3);
 }
+
+/* --------- PROGRAMME --------- */
+#landing-programme{
+  width: 100%;
+  height: 100vh;
+  background-color: #67C6C0;
+}
+
+#landing-programme > h1{
+  margin: 0;
+  padding: 0;
+}
+
+.exercices-container{
+  width: 100%;
+  height: 100vh;
+  background-color: #afd8d6;
+}
