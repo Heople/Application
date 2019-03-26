@@ -24,8 +24,11 @@
 
 </head>
 
+
 <body ng-app="ExerciceCompletion">
+  <!-- ng-app : initialisation de l'application qui permet le remplacement dynamique des champs  -->
     <div class="home-container" ng-controller="ExerciceController">
+      <!-- Le controller ExerciceController permet, au cliquer, de recupérer les informations relatives à l'élement cliquer dans le tableau JSON récupéré depuis la BDD, puis de remplacer dynamiquement les champs nom, description, video.  -->
       <div class="exercice">
         <i class="fas fa-times exercice-retour"></i>
         <div class="info-exercice-container">
@@ -35,6 +38,9 @@
           <span class="description-exo-home">{{description}}</span>
           <p class="titre-demonstration-exo-home">Demonstration</p>
           <div class="video">
+            <!-- On utilise le module ng-youtube-embed pour pouvoir intégrer des vidéos Youtube.Contrairment au embed fourni par youtube, il permet d'ajouter plus d'options, mais aussi de modifier dynamiquement l'url (videoURL) de la vidéo dans avoir à passer par un DomSanitizer additionnel.
+            DEPENDANCES : angular.min.js // angular-route.min.js pour les version d'angular après angular 1.2
+            -->
             <ng-youtube-embed
                 video="videoURL"
                 autoplay="false"
@@ -45,23 +51,36 @@
                 height="200px"
                   >
             </ng-youtube-embed>
-          </div> 
+          </div>
 
         </div>
       </div>
 
 
       <a href="index.html" style="position: absolute; top: 10px; left: 15px; color: #72c5c1;"><i class="fas fa-sign-in-alt fa-rotate-180"></i> Se déconnecter</a>
-      <!-- <img id="logo-home" src="img/logo.png" alt="Logo e-kiné"> -->
       <h1 class="h1-home">Bienvenue sur e-kiné ! </h1>
       <p class="description-home">Retrouvez vos exercices, vos informations, vos rendez-vous.</p>
       <div class="exercice-menu" >
-<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras droit<i class="fas fa-chevron-right"></i></div>
-<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras gauche<i class="fas fa-chevron-right"></i></div>
-<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse droite arrière<i class="fas fa-chevron-right"></i></div>
-<div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse gauche arrière<i class="fas fa-chevron-right"></i></div>
-<div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Touilette acrobatique<i class="fas fa-chevron-right"></i></div>
-<div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Retournement de la loutre<i class="fas fa-chevron-right"></i></div>
+        <!-- Au clique (grâce à la directive ng-click), la fonction setExercice est appellée. Elle permet de récupérer le nom de l'exercice (ng-model="name") puis de réattribuer les valeurs coresspondantes au nom-->
+
+        <div class="menu-exercice-item" ng-click="setExercice(exercice.nom)"   ng-model="name" ng-repeat="exercice in exercices">{{exercice.nom}}<i class="fas fa-chevron-right"></i></div>
+<!--
+        <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras gauche<i class="fas fa-chevron-right"></i></div> -->
+
+
+
+
+
+
+
+
+
+        <!-- <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras droit<i class="fas fa-chevron-right"></i></div>
+
+        <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse droite arrière<i class="fas fa-chevron-right"></i></div>
+        <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse gauche arrière<i class="fas fa-chevron-right"></i></div>
+        <div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Touilette acrobatique<i class="fas fa-chevron-right"></i></div>
+        <div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Retournement de la loutre<i class="fas fa-chevron-right"></i></div> -->
       </div>
 
       <a href="programme.html"><button class="demarrer">Démarrer le programme</button></a>
@@ -79,12 +98,22 @@
 
 
   <script type="text/javascript" src="cordova.js"></script>
-  <script src="res/jquery/jquery-3.3.1.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script>
+  <script src="js/jquery/jquery-3.3.1.js"></script>
+
+  <!-- Links vers les dépendances angular, angular-router et angular-youtube-embed.-->
+  <script type="text/javascript" src="js/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+  <script type="text/javascript" src="js/angular/ng-youtube-embed.min.js"></script>
   <script type="text/javascript" src="controllers/exercicecontroller.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+
+
+
+  <!-- LIENS CDN LIBRAIRIES ANGULAR MAIN, ROUTER, YT-EMBED -->
+  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script> -->
+
 </body>
 
 </html>

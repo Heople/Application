@@ -35,27 +35,40 @@
       </ul>
 
       <a href="#0">Lien vers le premier exercice</a>
+      <a href="#test">Lien test</a>
     </div>
 
     <div class="exercices-container" ng-repeat="exercice in programme">
       <div class="exercice"></div>
       <h1 id="{{exercice.id}}">Nom : {{exercice.nom}}</h1>
       <p>Despcription : {{exercice.description}}</p>
+
       <a href="#{{exercice.id+1}}">Aller à l'exercice suivant</a>
 
     </div>
+
+    <div id="test">dzdzdz</div>
 
 
   </div>
 
 
   <script type="text/javascript" src="cordova.js"></script>
-  <script src="res/jquery/jquery-3.3.1.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script>
+  <script src="js/jquery/jquery-3.3.1.js"></script>
+
+  <!-- Links vers les dépendances angular, angular-router et angular-youtube-embed.-->
+  <script type="text/javascript" src="js/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+  <script type="text/javascript" src="js/angular/ng-youtube-embed.min.js"></script>
   <script type="text/javascript" src="controllers/ProgrammeController.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+
+
+
+  <!-- LIENS CDN LIBRAIRIES ANGULAR MAIN, ROUTER, YT-EMBED -->
+  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script> -->
 </body>
 
 </html>

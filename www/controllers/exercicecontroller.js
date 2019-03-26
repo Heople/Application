@@ -2,11 +2,31 @@
   var app = angular.module('ExerciceCompletion', ['ngRoute', 'ngYoutubeEmbed']);
   app.controller('ExerciceController',function($scope) {
 
-    $scope.name = "Triple salto du bras gauche";
-    $scope.description ="Faire tournoyer son bras gauche dans le sens antéchronologique des aiguilles d'une montre.";
+
+    /* Initialisation de "fausses" données. Permet d'empecher l'erreur mineure "invalid youtube video URL or ID to render the iframe embed player".  */
+    $scope.name = "nom placeholder";
+    $scope.description ="description placeholder.";
     $scope.videoURL = 'https://www.youtube.com/watch?v=XWEkGT7XP08';
 
+    /* Fonction appellée au clique sur un exercice sur la home PAGE
+    Permet de changer dynamiquement les champs nom, description et video dans la vue.
+    DEPENDANCES : ngRoute, ngYoutubeEmbed
+    */
+    $scope.setExercice = function(x){
+      $(".exercice").css("display", "block");
+      $scope.name = x;
+      angular.forEach($scope.exercices, function(item){
+          if (item.nom == x) {
+              $scope.description = item.description;
+              $scope.video = item.video;
+              $scope.videoURL = item.lien;
 
+          }
+
+      });
+    };
+
+    // Fonction qui permet de masquer l'overlay d'affichages de informations des exercies.
     $(".exercice-retour").click(function(){
       $(".exercice").css("display", "none");
     });
@@ -22,24 +42,4 @@
     ]
 
 
-    $(".menu-exercice-item").click(function(){
-      $(".exercice").css("display", "block");
-        $scope.name = $(this).text();
-    });
-
-    $scope.setExercice = function(x){
-    $scope.name = x;
-    angular.forEach($scope.exercices, function(item){
-        if (item.nom == x) {
-            $scope.description = item.description;
-            $scope.video = item.video;
-            $scope.videoURL = item.lien;
-
-        }
-
-    });
-
-
-
-    };
 });

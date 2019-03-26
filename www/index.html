@@ -34,18 +34,25 @@
           <input type="checkbox" name="" value=""> Se souvenir de moi
         </div>
 
-          <button id="button-connect" class="ui button">Valier</button>
-        <span id="message-login">Ready</span>
+          <button id="button-connect" class="ui button">Valider</button>
+        <span id="message-login">Not ready</span>
       </div>
 
 
 
-  <script type="text/javascript" src="cordova.js"></script>
-  <script src="res/jquery/jquery-3.3.1.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script src="js/jquery/jquery-3.3.1.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+
+
+
+      <!-- LIENS CDN LIBRAIRIES ANGULAR MAIN, ROUTER, YT-EMBED -->
+      <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script> -->
   <script type="text/javascript">
   document.addEventListener("deviceready", function(){
-
+$('#message-login').html("Script Ready");
 $('#button-connect').click(function(){
   // console.log("truc");
   // var url = "http://o-samy.000webhostapp.com/authentification.php";
