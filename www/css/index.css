@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Ananda;
+  src: url(../res/fonts/ananda/Ananda.ttf);
+}
+
 html{
   height: 100%;
   overflow-x: hidden;
@@ -133,11 +138,12 @@ nav{
   width: 100%;
   height: 50px;
   z-index: 3;
-  background-color: #1c343d;
+  background-color: #F9F9F9;
+  box-shadow: 0 0px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
 nav > a > i{
-  color: white;
+  color: #9B9B9B;
   font-size: 20px;
 }
 
@@ -149,24 +155,41 @@ nav > a > i{
 
 .home-container{
   z-index: 2;
-  margin: 25% 0 0 0;
+  margin: 18% 0 0 0;
+}
+
+#button-deconnexion{
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: #72c5c1;
+  font-size: 17px;
+}
+
+#logo-home{
+  display: block;
+  width: 115px;
+  height: 115px;
+  margin: 3px auto;
 }
 
 .h1-home{
-  display: inline;
-  width: 50%;
-  color: rgba(255,255,255,1);
-  margin: 175px 0 0 0;
-  padding-left: 10px;
-  font-size: 6vh;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #467674;
+  margin: 0 0 0 0;
+  font-size: 4vh;
+  font-family: Ananda;
 }
 
 .description-home{
   width: 350px;
-  padding-left: 10px;
   color: black;
-  margin: 0 0 40px 0;
-  font-size: 3vh;
+  width: 80%;
+  margin: 20px auto;
+  font-size: 14px;
+  text-align: center;
 }
 
 .exercice-menu{
@@ -184,8 +207,8 @@ nav > a > i{
   font-size: 16px;
   padding-left: 10px;
   color: white;
-  background-color: rgba(114, 197, 193, 0.63);
-  border-radius: 3px;
+  background-color: #67C6C0;
+  border-radius: 8px;
 
 }
 
@@ -194,11 +217,11 @@ nav > a > i{
   width: 75%;
   height: 45px;
   line-height: 42px;
-  margin: 8% auto;
-  font-size: 16px;
+  margin: 8% auto 100px auto;
+  font-size: 18px;
   color: white;
-  background-color: rgba(47, 89, 123, 0.8);
-  border-radius: 3px;
+  background: linear-gradient(to right, #10898C, #67C6C0);
+  border-radius: 8px;
   border: none;
   box-shadow: -2px 19px 24px 0px rgba(0,0,0, 0.3);
 }
@@ -211,9 +234,7 @@ nav > a > i{
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #ffffff;
   z-index: 998;
   display: none;
 }
@@ -221,30 +242,30 @@ nav > a > i{
 .exercice-retour{
   position: absolute;
   top: 20px;
-  right: 20px;
+  left: 20px;
   z-index: 999;
   color: white;
   font-size: 30px;
 }
 
 .video{
-  width: 300px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.titre-nom-exo-home{
-  color: white;
-  margin: 40px 0 0 15px;
-  font-size: 35px;
+  width: 340px;
+  height: 220px;
+  margin: 35px auto;
 }
 
 .nom-exo-home{
   display: block;
-  width: 90%;
-  color: #72c5c1;
-  margin: 10px auto 0 auto;
+  width: 100%;
+  height: 70px;
+  color: #ffffff;
+  line-height: 68px;
+  margin: 0 0 50px 0;
+  padding: 0 30px 0 50px;
   font-size: 25px;
+  text-align: center;
+  background: linear-gradient(to right, #67C6C0, #10898C);
+  box-shadow: 0 0 15px 5px #c1c1c1;
 }
 
 .titre-description-exo-home{
@@ -255,7 +276,7 @@ nav > a > i{
 
 .description-exo-home{
   display: block;
-  color: #72c5c1;
+  color: #595959;
   margin: 0 auto 0 auto;
   padding: 10px 10px 10px 20px;
   font-size: 19px;
@@ -452,7 +473,7 @@ nav > a > i{
 }
 
 .antecedent{
-  text-align: center; 
+  text-align: center;
 }
 
 textarea{

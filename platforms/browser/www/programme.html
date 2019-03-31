@@ -25,11 +25,14 @@
 </head>
 
 <body ng-app="ProgrammeGenerator">
+  <!-- Rattachement au controller ProgrammeController -->
   <div class="super-programme-container" ng-controller="ProgrammeController">
+    <!-- Le bloc landing-programme contient le morceau de la page que l'utilisateur va voir en premier. Comporte Le nom di  programme, la liste des exercices et un bouton pour commencer le programme. -->
     <div id="landing-programme">
       <h1>Bienvenue sur la page programme</h1>
       <h3>Liste des programmes</h3>
 
+      <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer un élement li et y mettre le nom d'un exercice. -->
       <ul class="list-exercice" ng-repeat="exercice in programme">
         <li>Nom de l'exercice {{exercice.nom}}</li>
       </ul>
@@ -38,6 +41,7 @@
       <a href="#test">Lien test</a>
     </div>
 
+    <!-- Même principe qu'au dessus, à l'exception qu'ici on crée un bloc entier, de la taille du device de l'utilisateur, qui va contenir toutes les informations d'un exercice. Ainsi, on crée un enchainement d'exercice sur la même page. En lockant le scroll, on simule alors une navigation grâce à des liens vers des ancres (chaque bloc d'exercice étant composé d'un lien pour aller vers l'exercice suivant, et d'un id pour être atteignable). -->
     <div class="exercices-container" ng-repeat="exercice in programme">
       <div class="exercice"></div>
       <h1 id="{{exercice.id}}">Nom : {{exercice.nom}}</h1>
@@ -46,6 +50,31 @@
       <a href="#{{exercice.id+1}}">Aller à l'exercice suivant</a>
 
     </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
     <div id="test">dzdzdz</div>
 
