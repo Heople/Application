@@ -4,5 +4,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "displayName": "e-Kiné"
+    "displayName": "e-Kiné",
+    "dependencies": {
+        "cordova-plugin-splashscreen": "^5.0.2"
+    }
 }

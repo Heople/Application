@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+
+</head>
+
+<body ng-app="ProgrammeGenerator">
+  <!-- Rattachement au controller ProgrammeController -->
+  <div class="super-programme-container" ng-controller="ProgrammeController">
+    <!-- Le bloc landing-programme contient le morceau de la page que l'utilisateur va voir en premier. Comporte Le nom di  programme, la liste des exercices et un bouton pour commencer le programme. -->
+    <div id="landing-programme">
+      <h1>Bienvenue sur la page programme</h1>
+      <h3>Liste des programmes</h3>
+
+      <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer un élement li et y mettre le nom d'un exercice. -->
+      <ul class="list-exercice" ng-repeat="exercice in programme">
+        <li>Nom de l'exercice {{exercice.nom}}</li>
+      </ul>
+
+      <a href="#0">Lien vers le premier exercice</a>
+      <a href="#test">Lien test</a>
+    </div>
+
+    <!-- Même principe qu'au dessus, à l'exception qu'ici on crée un bloc entier, de la taille du device de l'utilisateur, qui va contenir toutes les informations d'un exercice. Ainsi, on crée un enchainement d'exercice sur la même page. En lockant le scroll, on simule alors une navigation grâce à des liens vers des ancres (chaque bloc d'exercice étant composé d'un lien pour aller vers l'exercice suivant, et d'un id pour être atteignable). -->
+    <div class="exercices-container" ng-repeat="exercice in programme">
+      <div class="exercice"></div>
+      <h1 id="{{exercice.id}}">Nom : {{exercice.nom}}</h1>
+      <p>Despcription : {{exercice.description}}</p>
+
+      <a href="#{{exercice.id+1}}">Aller à l'exercice suivant</a>
+
+    </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <div id="test">dzdzdz</div>
+
+
+  </div>
+
+
+  <script type="text/javascript" src="cordova.js"></script>
+  <script src="js/jquery/jquery-3.3.1.js"></script>
+
+  <!-- Links vers les dépendances angular, angular-router et angular-youtube-embed.-->
+  <script type="text/javascript" src="js/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+  <script type="text/javascript" src="js/angular/ng-youtube-embed.min.js"></script>
+  <script type="text/javascript" src="controllers/ProgrammeController.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+
+
+
+  <!-- LIENS CDN LIBRAIRIES ANGULAR MAIN, ROUTER, YT-EMBED -->
+  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script> -->
+</body>
+
+</html>

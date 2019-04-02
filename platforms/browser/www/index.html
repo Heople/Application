@@ -17,57 +17,96 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; connect-src * ;script-src * 'unsafe-inline'; font-src * ; media-src *">
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="background-login">
 
   <img id="logo-login" src="img/logo.png" alt="Logo e-Kiné">
       <div class="input-container">
-        <i class="far fa-user"></i><input id="input-user" type="text" placeholder="Email"><br>
+        <i class="far fa-user"></i><input id="input-email" type="text" placeholder="Identifiant"><br>
         <i class="fas fa-unlock"></i><input id="input-password" type="password" placeholder="Mot de passe" ><br>
         <div class="se-souvenir">
           <input type="checkbox" name="" value=""> Se souvenir de moi
         </div>
 
-        <!-- <a href="home.html"> -->
-          <button id="button-connect" class="ui button">Valier</button>
-        <!-- </a> -->
-        <span id="message-login"></span>
+          <button id="button-connect" class="ui button">Valider</button>
+        <span id="message-login">Not ready</span>
       </div>
 
 
 
-  <script type="text/javascript" src="cordova.js"></script>
-  <script src="res/jquery/jquery-3.3.1.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script src="js/jquery/jquery-3.3.1.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+
+
+
+      <!-- LIENS CDN LIBRAIRIES ANGULAR MAIN, ROUTER, YT-EMBED -->
+      <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script> -->
   <script type="text/javascript">
   document.addEventListener("deviceready", function(){
-
-
+$('#message-login').html("Script Ready");
 $('#button-connect').click(function(){
-  console.log("truc");
-  var url = "http://localhost:3000/php/authentification.php";
-  var email = $.trim($('#email').val());
-  var mdp = $.trim($('#mdp').val());
+  // console.log("truc");
+  // var url = "http://o-samy.000webhostapp.com/authentification.php";
+  var url = "http://samyouadhi.fr/authentification.php";
+  var a = "admin";
+  var b = "admin";
+  var email = $.trim($('#input-email').val());
+  var mdp = $.trim($('#input-password').val());
+  console.log(email);
 
-  $.ajax({
-    type: "POST", crossDomain: true, cache: false,
-    url: url,
-    succes: function(retour){
-      if (retour == "succes") {
-        $('#message').text("ok c'est good");
-      }
+  if ( !email.length && !mdp.length ) {
+    $('#message-login').html('Veuillez remplir les champs');
+  }
 
-      else if (data == "error") {
-        $('#message').text("ok c'est good");
-      }
+  else {
+    if (email == a && mdp == b) {
+      window.location.replace("home.html");
     }
-  });
+
+    else {
+      $('#message-login').html('Identifiant ou mot de passe incorrect');
+    }
+
+  }
+
+
+
+  // $.ajax({
+  //   type: "POST", crossDomain: true, cache: false,
+  //   url: url,
+  //   data: {
+  //     email: email,
+  //     mdp: mdp
+  //   },
+  //   success: function(retour){
+  //     $('#message-login').html(retour);
+      // if (retour == "succes") {
+      //   alert("Log");
+      // }
+      //
+      // else if (retour == "error") {
+      //   alert("Log");
+  //   },
+  // });
+
+  // $.ajax({
+  //   type: "Post",
+  //   url: url,
+  //   dataType: 'json',
+  //   contentType: 'json',
+  //   success: function(success){
+  //     $('#message-login').html(success);
+  //   }
+  // })
 });
 
 
