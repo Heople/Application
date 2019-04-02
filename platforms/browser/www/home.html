@@ -48,7 +48,10 @@
                   >
             </ng-youtube-embed>
           </div>
-          <span class="description-exo-home">{{description}}</span>
+          <div class="description-container">
+            <h2 class="titre-demonstration-exo-home">Description : </h2>
+            <p class="description-exo-home">{{description}}</p>
+          </div>
         </div>
       </div>
 
@@ -59,33 +62,18 @@
       <p class="description-home">Retrouvez vos exercices, vos informations et vos rendez-vous dans une même application.</p>
       <div class="exercice-menu" >
         <!-- Au clique (grâce à la directive ng-click), la fonction setExercice est appellée. Elle permet de récupérer le nom de l'exercice (ng-model="name") puis de réattribuer les valeurs coresspondantes au nom-->
-
         <div class="menu-exercice-item" ng-click="setExercice(exercice.nom)"   ng-model="name" ng-repeat="exercice in exercices">{{exercice.nom}}<i class="fas fa-chevron-right"></i></div>
-<!--
-        <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras gauche<i class="fas fa-chevron-right"></i></div> -->
-
-
-
-
-
-
-
-
-
-        <!-- <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Triple salto du bras droit<i class="fas fa-chevron-right"></i></div>
-
-        <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse droite arrière<i class="fas fa-chevron-right"></i></div>
-        <div class="menu-exercice-item" ng-click="setExercice(name)" ng-model="name">Contraction de la fesse gauche arrière<i class="fas fa-chevron-right"></i></div>
-        <div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Touilette acrobatique<i class="fas fa-chevron-right"></i></div>
-        <div class="menu-exercice-item"ng-click="setExercice(name)" ng-model="name">Retournement de la loutre<i class="fas fa-chevron-right"></i></div> -->
       </div>
 
       <a href="programme.html"><button class="demarrer">Démarrer le programme</button></a>
+
+
+      <!-- Menu de navigation. -->
       <nav>
-        <a href="home.html"><i class="fas fa-list-ul nav-active"></i></a>
-        <a href=""><i class="fas fa-calendar-check"></i></a>
-        <a href="meskine.html"><i class="fas fa-user-md"></i></a>
-        <a href="compte.html"><i class="far fa-user"></i></a>
+        <a href="home.html"><img src="img/icones/Accueil_ON.svg" /></a>
+        <a href=""><img src="img/icones/RDV_OFF.svg" /></a>
+        <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
+        <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
       </nav>
     </div>
 

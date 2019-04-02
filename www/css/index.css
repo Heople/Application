@@ -142,9 +142,10 @@ nav{
   box-shadow: 0 0px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
-nav > a > i{
-  color: #9B9B9B;
-  font-size: 20px;
+nav > a > img{
+  margin: 5px 0 0 0;
+  width: 25px;
+  height: 25px;
 }
 
 .nav-active{
@@ -278,14 +279,22 @@ nav > a > i{
   display: block;
   color: #595959;
   margin: 0 auto 0 auto;
-  padding: 10px 10px 10px 20px;
-  font-size: 19px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.description-container{
+  width: 90%;
+  margin: 0 auto;
+  background-color: rgba(103, 198, 192,0.1);
+  padding: 15px;
 }
 
 .titre-demonstration-exo-home{
-  color: white;
-  margin: 20px 0 20px 15px;
-  font-size: 28px;
+  color: #10898C;
+  margin: 10px 0 20px 0;
+  font-size: 20px;
+  font-family: Ananda;
 }
 
 /* --------- PAGE MES KINE ---------*/
@@ -350,10 +359,6 @@ nav > a > i{
   border-radius: 3px 3px 0 0;
   color: #878787 !important;
 }
-
-/* .inverse{
-  transform: rotate(180deg);
-} */
 
 .info-container{
   display: flex;
@@ -426,58 +431,139 @@ nav > a > i{
   display: inline-block;
 }
 
-.h1-compte{
-  /* position: absolute;
-  left: 30px; */
-  color: white;
-  font-size: 6vh;
+/*--------- COMPTE PATIENT --------- */
+.background-compte{
+  background-color: #67C6C0;
+  overflow-x: scroll;
 }
 
-.info-patient{
-  z-index: 1;
+.super-compte-container{
+  z-index: 2;
+  width: 100%;
+  overflow-y: scroll;
+  font-family: "Calibri";
+}
+
+.kine-container{
   width: 90%;
-  padding: 30px 20px 0 20px;
-  background-color: #fff;
-  border-radius: 15px 15px 0 0;
+  height: auto;
+  margin: 0 auto 0 auto;
+  background-color: white;
+  border-radius: 9px;
+  padding-top: 25px;
 }
 
-.info-patient img{
+.h1-compte{
+  width: 100%;
+ margin: 40px 0 0 0;
+ color: white;
+ font-size: 1.7em;
+ text-align: center;
+}
+
+.photo-patient{
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
 }
 
-.nom-patient{
+.nom-compte{
+  width: 100%;
+  height: 25px;
   text-align: center;
+  margin: 10px 0;
   font-weight: bold;
-  font-size: 20px;
-  margin: 10px 0 5px 0;
+  font-size: 17px;
+  border-radius: 3px 3px 0 0;
+  color: #878787 !important;
+}
+
+.date-anciennete{
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #B2B2B2;
+}
+
+.icone{
+  width: 20px;
+  height: 20px;
+  margin: 10px 20px 10px 20px;
+}
+
+.separateur-compte{
+  display: block;
+  width: 20%;
+  height: 2px;
+  background-color: white;
+  margin: 20px auto;
 }
 
 .descriptif{
   text-align: center;
   margin: 0 0 30px 0;
-
 }
 
-.modifiables{
-  border-top: 1px solid black;
-  padding: 20px 0 0 0;
+.compte-container{
+  width: 90%;
+  height: auto;
+  margin: 0 auto 0 auto;
+  background-color: white;
+  border-radius: 9px;
+  padding-top: 25px;
 }
 
-.modifiables input[type=text]{
-  padding-left: 10px;
-  width: 70%;
+.antecedent-titre{
+  color: #878787;
+  padding-left: 5px;
+  margin: 5px 0 0 0;
+  font-weight: normal;
+}
+
+.antecedent-texte{
+  color: #35847A;
+  font-size: 14px;
+  margin: 10px;
+
 }
 
 .antecedent{
-  text-align: center;
+  margin: 20px auto 30px auto;
+  width: 90%;
+  height: auto;
+  padding: 8px;
+  background-color: white;
+  border-radius: 8px;
 }
 
-textarea{
-  resize: none;
+.parametre-titre{
+  text-align: center;
+  font-size: 26px;
+  margin: 0;
+  color: #10898C;
+  font-weight: normal;
+}
+
+.icone-parametre{
+  width: 45px;
+  height: 45px;
+  position: relative;
+  top: 13px;
+  margin-right: 10px;
+}
+
+.notif-texte{
+  position: relative;
+  top: 6px;
+}
+
+.switch-notif{
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  margin: 40px auto;
 }
 
 #button-enregistrer{
@@ -495,6 +581,7 @@ textarea{
 }
 
 /* --------- PROGRAMME --------- */
+
 #landing-programme{
   width: 100%;
   height: 100vh;
@@ -510,4 +597,67 @@ textarea{
   width: 100%;
   height: 100vh;
   background-color: #afd8d6;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 50px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ececec;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background-color: #5AA8A0;
+}
+
+
+input:checked + .slider {
+  background-color: rgba(90, 168, 160,0.4);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgba(90, 168, 160,0.2);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
