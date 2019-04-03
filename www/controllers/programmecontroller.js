@@ -1,8 +1,8 @@
 var app = angular.module('ProgrammeGenerator', ['ngRoute', 'ngYoutubeEmbed']);
-// app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
-//     // enable html5Mode for pushstate ('#'-less URLs)
-//     $locationProvider.html5Mode(true);
-// }]);
+app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
+    // enable html5Mode for pushstate ('#'-less URLs)
+    $locationProvider.html5Mode(true);
+}]);
 
 
 app.controller('ProgrammeController', function($scope){

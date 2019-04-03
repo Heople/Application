@@ -79,7 +79,7 @@ var app = {
             console.log('notification event');
             navigator.notification.alert(
                 data.message,         // message
-                null,                 // callback
+                "Hello there",                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
             );
