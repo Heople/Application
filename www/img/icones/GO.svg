@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 48.4 48.4" style="enable-background:new 0 0 48.4 48.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'Calibri-Bold';}
+	.st3{font-size:19.9173px;}
+</style>
+<radialGradient id="SVGID_1_" cx="24.2" cy="24.2" r="24.2" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#10898C"/>
+	<stop  offset="1" style="stop-color:#67C6C0"/>
+</radialGradient>
+<circle class="st0" cx="24.2" cy="24.2" r="24.2"/>
+<text transform="matrix(1 0 0 1 11.2984 30.7243)" class="st1 st2 st3">GO</text>
+</svg>

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <base href="/">
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
@@ -28,55 +29,41 @@
   <!-- Rattachement au controller ProgrammeController -->
   <div class="super-programme-container" ng-controller="ProgrammeController">
     <!-- Le bloc landing-programme contient le morceau de la page que l'utilisateur va voir en premier. Comporte Le nom di  programme, la liste des exercices et un bouton pour commencer le programme. -->
+    <div class="header-programme">
+      <h1 class="header-titre">Mon programme</h1>
+    </div>
     <div id="landing-programme">
-      <h1>Bienvenue sur la page programme</h1>
-      <h3>Liste des programmes</h3>
+
+      <h3 class="landing-titre">Programme personnalisé</h3>
+      <p class="landing-description">
+        Ce programme permet de correctement étirer les muscles.
+Attention à ne pas forcer.
+      </p>
 
       <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer un élement li et y mettre le nom d'un exercice. -->
-      <ul class="list-exercice" ng-repeat="exercice in programme">
-        <li>Nom de l'exercice {{exercice.nom}}</li>
-      </ul>
+      <h3 class="exercice-titre">Exerices</h3>
+      <ol class="list-exercice">
+        <li class="exo-item" ng-repeat="exercice in programme"> {{exercice.nom}}</li>
+      </ol>
 
-      <a href="#0">Lien vers le premier exercice</a>
-      <a href="#test">Lien test</a>
+      <a href="#0"><img id="button-go" src="img/icones/GO.svg" alt="Boutton commencer le programme"></a>
     </div>
 
     <!-- Même principe qu'au dessus, à l'exception qu'ici on crée un bloc entier, de la taille du device de l'utilisateur, qui va contenir toutes les informations d'un exercice. Ainsi, on crée un enchainement d'exercice sur la même page. En lockant le scroll, on simule alors une navigation grâce à des liens vers des ancres (chaque bloc d'exercice étant composé d'un lien pour aller vers l'exercice suivant, et d'un id pour être atteignable). -->
     <div class="exercices-container" ng-repeat="exercice in programme">
-      <div class="exercice"></div>
-      <h1 id="{{exercice.id}}">Nom : {{exercice.nom}}</h1>
-      <p>Despcription : {{exercice.description}}</p>
+      <div id="{{exercice.id}}" class="header-programme">
+        <h1 class="header-titre">Mon programme</h1>
+      </div>
+      <span class="exercice-numero">Exercice {{exercice.id+1}}</span>
+      <h3 class="exercice-nom">{{exercice.nom}}</h3>
+      <p class="exercice-description">{{exercice.description}}</p>
 
       <a href="#{{exercice.id+1}}">Aller à l'exercice suivant</a>
+      <div class="video">
+        <iframe width="350" height="210" src="{{lien}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
 
     </div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-    <div id="test">dzdzdz</div>
 
 
   </div>
