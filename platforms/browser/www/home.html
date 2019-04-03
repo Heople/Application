@@ -62,10 +62,11 @@
       <p class="description-home">Retrouvez vos exercices, vos informations et vos rendez-vous dans une même application.</p>
       <div class="exercice-menu" >
         <!-- Au clique (grâce à la directive ng-click), la fonction setExercice est appellée. Elle permet de récupérer le nom de l'exercice (ng-model="name") puis de réattribuer les valeurs coresspondantes au nom-->
-        <div class="menu-exercice-item" ng-click="setExercice(exercice.nom)"   ng-model="name" ng-repeat="exercice in exercices">{{exercice.nom}}<i class="fas fa-chevron-right"></i></div>
+        <div class="menu-exercice-item" ng-click="setExercice(exercice.nom)"   ng-repeat="exercice in exercices">{{exercice.nom}}<i class="fas fa-chevron-right"></i></div>
       </div>
 
       <a href="programme.html"><button class="demarrer">Démarrer le programme</button></a>
+      <a href="programmetest.html" style="position :relative; bottom: 60px">Lien test</a>
 
 
       <!-- Menu de navigation. -->
