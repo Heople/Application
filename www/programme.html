@@ -46,7 +46,7 @@ Attention à ne pas forcer.
         <li class="exo-item" ng-repeat="exercice in programme"> {{exercice.nom}}</li>
       </ol>
 
-      <a href="#0" ng-click="setFirstexercice(0)"><img id="button-go" src="img/icones/GO.svg" alt="Boutton commencer le programme"></a>
+      <a href="#0" ng-click="setFirstexercice(0)"><img id="button-go" src="./img/icones/GO.svg" alt="Boutton commencer le programme"></a>
     </div>
 
     <!-- Même principe qu'au dessus, à l'exception qu'ici on crée un bloc entier, de la taille du device de l'utilisateur, qui va contenir toutes les informations d'un exercice. Ainsi, on crée un enchainement d'exercice sur la même page. En lockant le scroll, on simule alors une navigation grâce à des liens vers des ancres (chaque bloc d'exercice étant composé d'un lien pour aller vers l'exercice suivant, et d'un id pour être atteignable). -->
@@ -58,7 +58,7 @@ Attention à ne pas forcer.
       <h3 class="exercice-nom">{{exercice.nom}}</h3>
       <p class="exercice-description">{{exercice.description}}</p>
 
-      <div class="video">
+      <div class="video-programme">
         <ng-youtube-embed
             video="videoURL"
             autoplay="false"
@@ -70,11 +70,29 @@ Attention à ne pas forcer.
               >
         </ng-youtube-embed>
       </div>
+      <div class="rep-time">
+        <div class="rep">
+          {{exercice.repetition}} répétitions
+        </div>
+        <div class="separateur3"></div>
+        <div class="time">
+          {{exercice.duree}} .s / répétition
+        </div>
+      </div>
 
-      <a href="#{{exercice.id+1}}" ng-click="setNextVideo(exercice.id+1)">Aller à l'exercice suivant</a>
+      <div class="previous-next-handler">
+        <a href="#{{exercice.id+1}}" ng-click="setNextVideo(exercice.id+1)" ng-hide="$last"><img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
+        <a href="#{{exercice.id-1}}" ng-click="setNextVideo(exercice.id-1)" ng-hide="$last"><img class="next reverse" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
+      </div>
 
+      <!-- Menu de navigation. -->
+      <nav>
+        <a href="home.html"><img src="img/icones/Accueil_ON.svg" /></a>
+        <a href=""><img src="img/icones/RDV_OFF.svg" /></a>
+        <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
+        <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
+      </nav>
     </div>
-
 
   </div>
 
