@@ -36,6 +36,17 @@ var app = {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
+        window.plugins.PushbotsPlugin.initialize("5ca5d75a0540a3779c324a02", {"android":{"sender_id":"AAAAGUN2384:APA91bGES7Ao0p7hniPBajkx6eGgOdPhdSvl0qJyMmAwnWdNN28YPoZmge5MyZDVnlxc_53kOXQTMHzr0ddD8gDfjELx3L68xFRmQj4aip5iTprAWOv9x9gyK8SqjD3vI4WugNsmslHJ"}});
+// Only with First time registration
+window.plugins.PushbotsPlugin.on("registered", function(token){
+	console.log("Registration Id:" + token);
+});
+
+//Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
+window.plugins.PushbotsPlugin.on("user:ids", function(data){
+	console.log("user:ids" + JSON.stringify(data));
+});
+
     },
     setupPush: function() {
         console.log('calling push init');

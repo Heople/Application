@@ -53,7 +53,7 @@ a{
   width: 170px;
 }
 
-#input-email, #input-password{
+#input-identifiant, #input-password{
   display: inline-block;
   width: 170px;
   height: 25px;

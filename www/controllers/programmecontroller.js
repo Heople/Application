@@ -1,13 +1,16 @@
-var app = angular.module('ProgrammeGenerator', ['ngRoute', 'ngYoutubeEmbed']);
-app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
-    // enable html5Mode for pushstate ('#'-less URLs)
-    $locationProvider.html5Mode(true);
-}]);
+var app = angular.module('ProgrammeGenerator', []);
+// app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
+//     // enable html5Mode for pushstate ('#'-less URLs)
+//     $locationProvider.html5Mode(true);
+// }]);
 
 
-app.controller('ProgrammeController', function($scope){
+app.controller('ProgrammeController', ['$scope', 'ngRoute', 'ngYoutubeEmbed', '$location', '$anchorScroll'],function($scope, $location, $anchorScroll){
 
 
+  // window.location.replace("programme.html#1");
+  $location.hash('#3');
+  $anchorScroll();
 
   $scope.programme=[
       {id: 0, nom: "Triple salto du bras gauche", description:"Debout ou assis, le dos bien droit, inclinez la tête sur un côté et tirez doucement avec votre main jusqu’à ressentir l’étirement à la base du cou. Pour plus d’amplitude, la main du côté étiré pourra être placée dans le dos. Étirez de la même façon l’autre côté.", lien: "https://www.youtube.com/watch?v=eLYhnBaWOzc", duree: 30, repetition: 8},

@@ -2,6 +2,16 @@
   var app = angular.module('ExerciceCompletion', ['ngRoute', 'ngYoutubeEmbed']);
   app.controller('ExerciceController',function($scope) {
 
+    angular.element(document).ready(function(){
+      var id = Cookies.get();
+      // var local =
+      $scope.idCookie = id;
+      $scope.$digest();
+      console.log(id);
+    });
+
+
+
 
     /* Initialisation de "fausses" données. Permet d'empecher l'erreur mineure "invalid youtube video URL or ID to render the iframe embed player".  */
     $scope.name = "nom placeholder";
@@ -29,6 +39,11 @@
     // Fonction qui permet de masquer l'overlay d'affichages de informations des exercies.
     $(".exercice-retour").click(function(){
       $(".exercice").css("display", "none");
+    });
+
+    $("#button-deconnexion").click(function(){
+      Cookies.remove('id');
+      Cookies.remove('keepMeAlive');
     });
 
 

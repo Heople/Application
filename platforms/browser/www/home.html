@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="static">
+<html class="">
 
 <head>
     <meta charset="utf-8" />
@@ -57,6 +57,8 @@
 
 
       <a href="index.html" id="button-deconnexion"><i class="fas fa-sign-in-alt fa-rotate-180"></i> SE DÉCONNECTER</a>
+      <p class="cookie">Cookie : {{idCookie}}</p>
+      <p class="localstorage">localStorage : </p>
       <img id="logo-home" src="img/logo.png" alt="Logo e-Kiné">
       <h1 class="h1-home">Le kiné à vos cotés !</h1>
       <p class="description-home">Retrouvez vos exercices, vos informations et vos rendez-vous dans une même application.</p>
@@ -85,15 +87,9 @@
   <script type="text/javascript" src="js/angular/angular.min.js"></script>
   <script type="text/javascript" src="js/angular/angular-route.min.js"></script>
   <script type="text/javascript" src="js/angular/ng-youtube-embed.min.js"></script>
-  <script type="text/javascript" src="controllers/exercicecontroller.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script type="text/javascript" src="controllers/homecontroller.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-
-
-
-  <!-- LIENS CDN LIBRAIRIES ANGULAR MAIN, ROUTER, YT-EMBED -->
-  <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ng-youtube-embed@1.7.15/build/ng-youtube-embed.min.js"></script> -->
 
 </body>
 
