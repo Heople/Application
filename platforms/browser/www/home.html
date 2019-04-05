@@ -2,81 +2,63 @@
 <html class="">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; connect-src * ; img-src * ; script-src * 'unsafe-inline'; font-src * ; media-src *">
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-
-    <link rel="stylesheet" type="text/css" href="./css/index.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src * 'unsafe-inline'; connect-src * ; img-src * ; script-src * 'unsafe-inline'; font-src * ; media-src *">
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
 
 </head>
 
 
 <body ng-app="ExerciceCompletion">
   <!-- ng-app : initialisation de l'application qui permet le remplacement dynamique des champs  -->
-    <div class="home-container" ng-controller="ExerciceController">
-      <!-- Le controller ExerciceController permet, au cliquer, de recupérer les informations relatives à l'élement cliquer dans le tableau JSON récupéré depuis la BDD, puis de remplacer dynamiquement les champs nom, description, video.  -->
-      <div class="exercice">
-        <i class="fas fa-chevron-left exercice-retour"></i>
-        <div class="info-exercice-container">
-          <span class="nom-exo-home">{{name}}</span>
-          <div class="video">
-            <!-- On utilise le module ng-youtube-embed pour pouvoir intégrer des vidéos Youtube.Contrairment au embed fourni par youtube, il permet d'ajouter plus d'options, mais aussi de modifier dynamiquement l'url (videoURL) de la vidéo dans avoir à passer par un DomSanitizer additionnel.
+  <div class="home-container" ng-controller="ExerciceController">
+    <!-- Le controller ExerciceController permet, au cliquer, de recupérer les informations relatives à l'élement cliquer dans le tableau JSON récupéré depuis la BDD, puis de remplacer dynamiquement les champs nom, description, video.  -->
+    <div class="exercice">
+      <i class="fas fa-chevron-left exercice-retour"></i>
+      <div class="info-exercice-container">
+        <span class="nom-exo-home">{{name}}</span>
+        <div class="video">
+          <!-- On utilise le module ng-youtube-embed pour pouvoir intégrer des vidéos Youtube.Contrairment au embed fourni par youtube, il permet d'ajouter plus d'options, mais aussi de modifier dynamiquement l'url (videoURL) de la vidéo dans avoir à passer par un DomSanitizer additionnel.
             DEPENDANCES : angular.min.js // angular-route.min.js pour les version d'angular après angular 1.2
             -->
-            <ng-youtube-embed
-                video="videoURL"
-                autoplay="false"
-                color="black"
-                disablekb="true"
-                end="20"
-                width="340px"
-                height="220px"
-                  >
-            </ng-youtube-embed>
-          </div>
-          <div class="description-container">
-            <h2 class="titre-demonstration-exo-home">Description : </h2>
-            <p class="description-exo-home">{{description}}</p>
-          </div>
+          <ng-youtube-embed video="videoURL" autoplay="false" color="black" disablekb="true" end="20" width="100%" height="auto">
+          </ng-youtube-embed>
+        </div>
+        <div class="description-container">
+          <h2 class="titre-demonstration-exo-home">Description : </h2>
+          <p class="description-exo-home">{{description}}</p>
         </div>
       </div>
-
-
-      <a href="index.html" id="button-deconnexion"><i class="fas fa-sign-in-alt fa-rotate-180"></i> SE DÉCONNECTER</a>
-      <p class="cookie">Cookie : {{idCookie}}</p>
-      <img id="logo-home" src="img/logo.png" alt="Logo e-Kiné">
-      <h1 class="h1-home">Le kiné à vos cotés !</h1>
-      <p class="description-home">Retrouvez vos exercices, vos informations et vos rendez-vous dans une même application.</p>
-      <div class="exercice-menu" >
-        <!-- Au clique (grâce à la directive ng-click), la fonction setExercice est appellée. Elle permet de récupérer le nom de l'exercice (ng-model="name") puis de réattribuer les valeurs coresspondantes au nom-->
-        <div class="menu-exercice-item" ng-click="setExercice(exercice.Nom_exo)"  ng-repeat="exercice in exercices">{{exercice.Nom_exo}}<i class="fas fa-chevron-right"></i></div>
-      </div>
-
-      <a href="programme.html"><button class="demarrer">Démarrer le programme</button></a>
-
-
-      <!-- Menu de navigation. -->
-      <nav>
-        <a href="home.html"><img src="img/icones/Accueil_ON.svg" /></a>
-        <a href=""><img src="img/icones/RDV_OFF.svg" /></a>
-        <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
-        <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
-      </nav>
     </div>
+
+
+    <a href="index.html" id="button-deconnexion"><i class="fas fa-sign-in-alt fa-rotate-180"></i> SE DÉCONNECTER</a>
+    <img id="logo-home" src="img/logo.png" alt="Logo e-Kiné">
+    <h1 class="h1-home">Le kiné à vos cotés !</h1>
+    <p class="description-home">Retrouvez vos exercices, vos informations et vos rendez-vous dans une même application.</p>
+    <div class="exercice-menu">
+      <!-- Au clique (grâce à la directive ng-click), la fonction setExercice est appellée. Elle permet de récupérer le nom de l'exercice (ng-model="name") puis de réattribuer les valeurs coresspondantes au nom-->
+      <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer une div et y mettre le nom d'un exercice. -->
+      <div class="menu-exercice-item" ng-click="setExercice(exercice.Nom_exo)" ng-repeat="exercice in exercices">{{exercice.Nom_exo}}<i class="fas fa-chevron-right"></i></div>
+      <p class="aucun-exo">Vous n'avez pas d'exerices à faire</p>
+    </div>
+
+    <a href="programme.html"><button class="demarrer">Démarrer le programme</button></a>
+
+
+    <!-- Menu de navigation. -->
+    <nav>
+      <a href="home.html"><img src="img/icones/Accueil_ON.svg" /></a>
+      <a href=""><img src="img/icones/RDV_OFF.svg" /></a>
+      <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
+      <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
+    </nav>
+  </div>
 
   <script type="text/javascript" src="cordova.js"></script>
   <script src="js/jquery/jquery-3.3.1.js"></script>
