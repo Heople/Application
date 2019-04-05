@@ -13,7 +13,7 @@
 
 </head>
 
-<body ng-app="ProgrammeGenerator">
+<body ng-app="ProgrammeGenerator" class="static">
   <!-- Rattachement au controller ProgrammeController -->
   <div class="super-programme-container" ng-controller="ProgrammeController">
     <!-- Le bloc landing-programme contient le morceau de la page que l'utilisateur va voir en premier. Comporte Le nom di  programme, la liste des exercices et un bouton pour commencer le programme. -->
@@ -29,7 +29,7 @@ Attention à ne pas forcer.
       </p>
 
       <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer un élement li et y mettre le nom d'un exercice. -->
-      <h3 class="exercice-titre">Exerices</h3>
+      <h3 class="exercice-titre">Exercices</h3>
       <ol class="list-exercice">
         <li class="exo-item" ng-repeat="exercice in programme"> {{exercice.nom}}</li>
       </ol>
@@ -47,7 +47,7 @@ Attention à ne pas forcer.
       <p class="exercice-description">{{exercice.description}}</p>
 
       <div class="video-programme">
-        <!-- <ng-youtube-embed
+        <ng-youtube-embed
             video="videoURL"
             autoplay="false"
             color="black"
@@ -56,7 +56,7 @@ Attention à ne pas forcer.
             width="340px"
             height="220px"
               >
-        </ng-youtube-embed> -->
+        </ng-youtube-embed>
       </div>
       <div class="rep-time">
         <div class="rep">
@@ -70,7 +70,7 @@ Attention à ne pas forcer.
 
       <div class="previous-next-handler">
         <a href="#{{exercice.id+1}}" ng-click="setNextVideo(exercice.id+1)" ng-hide="$last"><img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
-        <a href="#{{exercice.id-1}}" ng-click="setNextVideo(exercice.id-1)" ng-hide="$last"><img class="next reverse" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
+        <a href="#{{exercice.id-1}}" ng-click="setNextVideo(exercice.id-1)" ng-hide="$last"><img class="next" src="img/icones/Precedent.svg" alt="Bouton aller à l'exercice precedent"></a>
       </div>
 
       <!-- Menu de navigation. -->

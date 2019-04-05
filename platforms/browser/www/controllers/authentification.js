@@ -32,18 +32,11 @@ $(document).ready(function(){
           mdp: $mdp
         },
         success: function(data){
-          console.log(data.state);
-
-          console.log(data.state);
-          console.log(data);
           if (data.state === "success") {
             //On garde en mémoire l'id de l'utilisateur (Cookie pour navigateur, localstorage pour mobile)
             console.log("succes");
 
             Cookies.set('id', data.Id);
-            localStorage.id = "Greg";
-            var foo = localStorage.Id;
-            console.log(foo);
             //On vérifie si la personne souhauite maintenir la session
             if($keep == true){
               Cookies.set('keepMeAlive', "OhYes")

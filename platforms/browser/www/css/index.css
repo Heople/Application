@@ -596,14 +596,15 @@ nav > a > img{
   color: #10898C;
   font-weight: normal;
   font-size: 18px;
-  margin: 40px 0 10px 50px;
+  margin: 20px 0 10px 50px;
 }
 
 .landing-description{
-  margin: 10px 20px;
+  margin: 10px auto;
   font-size: 15px;
   color: #939393;
-  font-size: 18px;
+  font-size: 15px;
+  width: 80%;
 }
 
 .exercice-titre{
@@ -616,7 +617,7 @@ nav > a > img{
 }
 
 .landing-description{
-  height: 100px;
+  height: 50px;
 }
 
 .exercice-numero{
@@ -663,20 +664,21 @@ nav > a > img{
 
 .list-exercice{
   background-color: rgba(0,0,0,0.1);
-  /* padding: 0 40%; */
+  padding: 10px 15%;
 }
 
 .list-exercice > li{
-  margin: 10px 0;width: 100%;
+  margin: 6px 0;width: 100%;
+  padding: 5px 0;
+  line-height: 15px;
+  font-size: 13px;
 }
 
 #button-go{
   display: block;
   width: 100px;
   height: 100px;
-  position: absolute;
-  margin-top: 10px;
-  left: calc(100vw/2 - 50px);
+  margin: 30px 37% 0 37%;
 }
 
 
@@ -725,9 +727,6 @@ nav > a > img{
   margin: 0 30px;
 }
 
-.reverse{
-  transform: rotate(0.5turn);
-}
 
 .switch {
   position: relative;

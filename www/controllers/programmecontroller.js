@@ -1,15 +1,15 @@
-var app = angular.module('ProgrammeGenerator', []);
+var app = angular.module('ProgrammeGenerator', ['ngRoute', 'ngYoutubeEmbed']);
 // app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
 //     // enable html5Mode for pushstate ('#'-less URLs)
 //     $locationProvider.html5Mode(true);
 // }]);
 
 
-app.controller('ProgrammeController', ['$scope', 'ngRoute', 'ngYoutubeEmbed', '$location', '$anchorScroll'],function($scope, $location, $anchorScroll){
+app.controller('ProgrammeController',function($scope, $location, $anchorScroll){
 
 
   // window.location.replace("programme.html#1");
-  $location.hash('#3');
+  // $location.hash('#3');
   $anchorScroll();
 
   $scope.programme=[

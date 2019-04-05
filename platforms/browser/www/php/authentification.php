@@ -1,6 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: http://ekine.iut-velizy.uvsq.fr', true);
-
 
 //On utilise la fonction htmlspecialchars pour nous protéger contre une faille XSS
 $identifiant = htmlspecialchars($_POST['identifiant']);
