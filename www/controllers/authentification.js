@@ -46,11 +46,5 @@ $(document).ready(function() {
         }
       })
     }
-
-
-
   });
-
-
-
 });

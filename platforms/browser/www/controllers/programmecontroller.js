@@ -69,7 +69,6 @@ app.controller('ProgrammeController', function($scope, $location, $anchorScroll)
   }, ]
 
   $scope.setFirstexercice = function(x) {
-    console.log(x);
     angular.forEach($scope.programme, function(item) {
       if (item.id == x) {
         $scope.videoURL = item.lien;
@@ -79,11 +78,9 @@ app.controller('ProgrammeController', function($scope, $location, $anchorScroll)
   }
 
   $scope.setNextVideo = function(x) {
-    console.log(x);
     angular.forEach($scope.programme, function(item) {
       if (item.id == x) {
         $scope.videoURL = item.lien;
-
       }
 
     });

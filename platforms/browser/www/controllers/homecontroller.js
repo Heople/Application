@@ -40,7 +40,7 @@
     $scope.description = "description placeholder.";
     $scope.videoURL = 'https://www.youtube.com/watch?v=XWEkGT7XP08';
 
-    /* Fonction appellée au clique sur un exercice sur la home PAGE
+    /* Fonction appellée au clique sur un exercice sur la home page
     Permet de changer dynamiquement les champs Nom, description et video dans la vue.
     DEPENDANCES : ngRoute, ngYoutubeEmbed
     */

@@ -1,13 +1,11 @@
 var app = angular.module('ProgrammeGenerator', ['ngRoute', 'ngYoutubeEmbed']);
 
 app.controller('ProgrammeController', function($scope, $location, $anchorScroll) {
+$anchorScroll();
+
 
   var cookie = Cookies.get();
   $scope.idCookie = cookie.id;
-  // window.location.replace("programme.html#1");
-  // $location.hash('#3');
-  $anchorScroll();
-
 
   $('.visage').click(function(){
     $lvl = $(this).attr('id');
@@ -69,7 +67,6 @@ app.controller('ProgrammeController', function($scope, $location, $anchorScroll)
   }, ]
 
   $scope.setFirstexercice = function(x) {
-    console.log(x);
     angular.forEach($scope.programme, function(item) {
       if (item.id == x) {
         $scope.videoURL = item.lien;
@@ -79,11 +76,9 @@ app.controller('ProgrammeController', function($scope, $location, $anchorScroll)
   }
 
   $scope.setNextVideo = function(x) {
-    console.log(x);
     angular.forEach($scope.programme, function(item) {
       if (item.id == x) {
         $scope.videoURL = item.lien;
-
       }
 
     });

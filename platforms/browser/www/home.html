@@ -23,7 +23,7 @@
       <div class="info-exercice-container">
         <span class="nom-exo-home">{{name}}</span>
         <div class="video">
-          <!-- On utilise le module ng-youtube-embed pour pouvoir intégrer des vidéos Youtube.Contrairment au embed fourni par youtube, il permet d'ajouter plus d'options, mais aussi de modifier dynamiquement l'url (videoURL) de la vidéo dans avoir à passer par un DomSanitizer additionnel.
+          <!-- On utilise le module ng-youtube-embed pour pouvoir intégrer des vidéos Youtube.Contrairement au embed fourni par youtube, il permet d'ajouter plus d'options, mais aussi de modifier dynamiquement l'url (videoURL) de la vidéo sans avoir à passer par un DomSanitizer additionnel.
             DEPENDANCES : angular.min.js // angular-route.min.js pour les version d'angular après angular 1.2
             -->
           <ng-youtube-embed video="videoURL" autoplay="false" color="black" disablekb="true" end="20" width="100%" height="auto">
@@ -42,9 +42,11 @@
     <h1 class="h1-home">Le kiné à vos cotés !</h1>
     <p class="description-home">Retrouvez vos exercices, vos informations et vos rendez-vous dans une même application.</p>
     <div class="exercice-menu">
-      <!-- Au clique (grâce à la directive ng-click), la fonction setExercice est appellée. Elle permet de récupérer le nom de l'exercice (ng-model="name") puis de réattribuer les valeurs coresspondantes au nom-->
+      <!-- Au clique (grâce à la directive ng-click), la fonction setExercice est appellée. Elle permet de réattribuer les valeurs coresspondantes au nom-->
       <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer une div et y mettre le nom d'un exercice. -->
-      <div class="menu-exercice-item" ng-click="setExercice(exercice.Nom_exo)" ng-repeat="exercice in exercices">{{exercice.Nom_exo}}<i class="fas fa-chevron-right"></i></div>
+      <div class="menu-exercice-item" ng-click="setExercice(exercice.Nom_exo)" ng-repeat="exercice in exercices">
+        {{exercice.Nom_exo}}<i class="fas fa-chevron-right"></i>
+      </div>
       <p class="aucun-exo">Vous n'avez pas d'exerices à faire</p>
     </div>
 

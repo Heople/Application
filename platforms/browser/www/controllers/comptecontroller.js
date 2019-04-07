@@ -26,8 +26,10 @@ app.controller('CompteController', function($scope) {
     },
     // Fonction lancée à la fin de traitement PHP.
     success: function(data) {
+      //On alimente la variable patient du du scope avec les données récupérées.
       $scope.patient = data.resultat;
-      console.log($scope.patient);
+      //On parcours le tableau d'objets récupéré.
+      //Pour chaque informations, on alimente une variable du scope.
       angular.forEach($scope.patient, function(item) {
         $scope.nom = item.Nom;
         $scope.prenom = item.Prenom;
