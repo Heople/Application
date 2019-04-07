@@ -13,33 +13,33 @@
 
 </head>
 
-<body class="background-compte">
+<body class="background-compte" ng-app="Compte">
 
 
-  <div class="super-compte-container">
+  <div class="super-compte-container" ng-controller="CompteController">
 
     <h1 class="h1-compte">MON ESPACE</h1>
     <span class="separateur-compte"></span>
     <div class="compte-container">
       <img class="photo-patient" src="img/photo-kine.png" alt="Photo d'Adriana Samya">
       <p class="nom-compte">
-        Anthony Rodriguez
+        {{nom}} {{prenom}}
       </p>
       <p class="date-anciennete">Patient depuis le 14/03/2019</p>
       <div class="info-container">
-        <p class="email-compte"><img class="icone" src="img/icones/Mail.svg" alt="icone de gateau"><br>anthonyrodriguez@gmail.com</p>
+        <p class="email-compte"><img class="icone" src="img/icones/Mail.svg" alt="icone de gateau"><br>{{email}}</p>
         <span class="separateur2"></span>
-        <p class="adresse-compte"><img class="icone" src="img/icones/Gateau.svg" alt="icone de gateau"><br>15 / 05 / 1999</p>
+        <p class="adresse-compte"><img class="icone" src="img/icones/Gateau.svg" alt="icone de gateau"><br>{{naissance}}</p>
 
       </div>
       <div class="telephone-container">
-        <p class="telephone-compte"><i class="fas fa-phone"></i>Appeler au <strong>06 02 65 xx xx</strong></p>
+        <p class="telephone-compte"><i class="fas fa-phone"></i>Appeler au <strong>{{tel}}</strong></p>
       </div>
     </div>
 
     <div class="antecedent">
       <h3 class="antecedent-titre">Antécedent</h3>
-      <p class="antecedent-texte">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores reiciendis obcaecati explicabo fuga deleniti, voluptatum ullam, itaque commodi numquam sit illo. Omnis ea dolore vero sint rerum animi ad distinctio!</p>
+      <p class="antecedent-texte">{{antecedent}}</p>
     </div>
 
     <div class="compte-container">
@@ -79,6 +79,8 @@
 
   <!-- Links vers la dépendance angular-->
   <script type="text/javascript" src="js/angular/angular.min.js"></script>
+  <script type="text/javascript" src="controllers/comptecontroller.js"></script>
+  <script type="text/javascript" src="js/cookie/js.cookie.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 
 

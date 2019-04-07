@@ -276,10 +276,18 @@ nav > a > img{
   margin: 5px;
 }
 
+textarea{
+  display: block;
+  margin: 20px auto;
+  padding: 7px;
+}
+
 .diff{
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   height: auto;
+  padding: 20px;
+  background-color: #ececec
 }
 
 .diff-texte{
@@ -287,6 +295,10 @@ nav > a > img{
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.exit{
+  margin-left: 250px !important;
 }
 
 .emote-handler{
@@ -300,6 +312,12 @@ nav > a > img{
 .aucun-exo{
   display: none;
   text-align: center;
+}
+
+.fin-texte{
+  text-align: center;
+  color: grey;
+  margin: 3px 0;
 }
 
 .video{

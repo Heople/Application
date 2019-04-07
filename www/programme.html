@@ -17,13 +17,14 @@
   <div class="super-programme-container" ng-controller="ProgrammeController">
     <!-- Le bloc landing-programme contient le morceau de la page que l'utilisateur va voir en premier. Comporte Le nom di  programme, la liste des exercices et un bouton pour commencer le programme. -->
     <div class="header-programme">
-      <h1 class="header-titre">Mon programme</h1>
+      <h1 id="-1" class="header-titre">Mon programme</h1>
     </div>
     <div id="landing-programme">
 
       <h3 class="landing-titre">Programme personnalisé</h3>
       <p class="landing-description">
-        Ce programme permet de correctement étirer les muscles. Attention à ne pas forcer.
+        Ce programme permet de correctement étirer les muscles.
+Attention à ne pas forcer.
       </p>
 
       <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer un élement li et y mettre le nom d'un exercice. -->
@@ -34,17 +35,26 @@
 
       <a href="#0" ng-click="setFirstexercice(0)"><img id="button-go" src="./img/icones/GO.svg" alt="Boutton commencer le programme"></a>
     </div>
+
     <!-- Même principe qu'au dessus, à l'exception qu'ici on crée un bloc entier, de la taille du device de l'utilisateur, qui va contenir toutes les informations d'un exercice. Ainsi, on crée un enchainement d'exercice sur la même page. En lockant le scroll, on simule alors une navigation grâce à des liens vers des ancres (chaque bloc d'exercice étant composé d'un lien pour aller vers l'exercice suivant, et d'un id pour être atteignable). -->
     <div class="exercices-container" ng-repeat="exercice in programme">
       <div id="{{exercice.id}}" class="header-programme">
         <h1 class="header-titre">Mon programme</h1>
       </div>
-      <span class="exercice-numero">Exercice {{exercice.id+1}} / {{nb}}</span>
+      <span class="exercice-numero">Exercice {{exercice.id+1}}</span>
       <h3 class="exercice-nom">{{exercice.nom}}</h3>
       <p class="exercice-description">{{exercice.description}}</p>
 
       <div class="video-programme">
-        <ng-youtube-embed video="videoURL" autoplay="false" color="black" disablekb="true" end="20" width="340px" height="220px">
+        <ng-youtube-embed
+            video="videoURL"
+            autoplay="false"
+            color="black"
+            disablekb="true"
+            end="20"
+            width="340px"
+            height="220px"
+              >
         </ng-youtube-embed>
       </div>
       <div class="rep-time">
@@ -58,32 +68,14 @@
       </div>
 
       <div class="previous-next-handler">
-        <a href="#{{exercice.id+1}}" ng-click="setNextVideo(exercice.id+1)" ng-hide="$last"><img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
+        <a href="#{{exercice.id+1}}" ng-hide="$last" ng-click="setNextVideo(exercice.id+2)" ><img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
+        <a href="#fin" ng-if="$last"><img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
+        <a href="#{{exercice.id-1}}" ng-hide="$last" ng-click="setNextVideo(exercice.id-1)" ><img class="next" src="img/icones/Precedent.svg" alt="Bouton aller à l'exercice precedent"></a>
       </div>
-      <div class="exercices-container" ng-show="$last">
-        <div id="{{exercice.id+1}}" class="header-programme">
-          <h1 class="header-titre">Mon programme</h1>
-          <h3 class="landing-titre">Programme personnalisé</h3>
-          <p class="landing-description">
-            Fin du programme.
-          </p>
-          <div id="fin-programme">
 
-            <div class="diff">
-              <span class="diff-texte">Difficultées du programme</span>
-              <div class="emote-handler">
-                <img src="img/icones/01.svg" alt="visage triste" class="visage">
-                <img src="img/icones/02.svg" alt="visage moins triste" class="visage">
-                <img src="img/icones/03.svg" alt="visage sourire" class="visage">
-                <img src="img/icones/04.svg" alt="visage heureux" class="visage">
-              </div>
 
-            </div>
 
-            <textarea style="resize: none;" name="name" rows="8" cols="30"></textarea>
-          </div>
-        </div>
-      </div>
+
 
       <!-- Menu de navigation. -->
       <nav>
@@ -92,6 +84,33 @@
         <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
         <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
       </nav>
+    </div>
+
+    <div class="exercices-container">
+      <div id="fin" class="header-programme">
+        <h1 class="header-titre">Mon programme</h1>
+        <h3 class="landing-titre">Programme personnalisé</h3>
+        <p class="fin-texte">
+          Fin du programme.
+        </p>
+        <div id="fin-programme">
+
+          <div class="diff">
+            <span class="diff-texte">Difficultées du programme</span>
+            <div class="emote-handler">
+              <img id="lvl1"src="img/icones/01.svg" alt="visage triste" class="visage">
+              <img id="lvl2"src="img/icones/02.svg" alt="visage moins triste" class="visage">
+              <img id="lvl3"src="img/icones/03.svg" alt="visage sourire" class="visage">
+              <img id="lvl4"src="img/icones/04.svg" alt="visage heureux" class="visage">
+            </div>
+
+          </div>
+
+          <textarea id="commentaire" placeholder="Commentaire (optionnel)" style="resize: none;" name="name" rows="8" cols="30"></textarea>
+          <button id="send-feedback" type="button" name="button">Envoyer</button>
+          <a href="home.html"><img class="next exit" src="img/icones/suivant.svg"></a>
+        </div>
+      </div>
     </div>
 
   </div>
