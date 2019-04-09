@@ -1,6 +1,13 @@
-@font-face {
+/* @font-face {
   font-family: Ananda;
   src: url(../res/fonts/ananda/Ananda.ttf);
+} */
+
+@font-face {
+font-family: 'Ananda Black Regular';
+font-style: normal;
+font-weight: normal;
+src: local('../res/fonts/ananda/Ananda Black Regular'), url('../res/fonts/ananda/Ananda Black.woff') format('woff');
 }
 
 html{
@@ -195,7 +202,7 @@ nav > a > img{
   color: #467674;
   margin: 0 0 0 0;
   font-size: 4vh;
-  font-family: Ananda;
+  font-family: 'Ananda Black Regular';
 }
 
 .description-home{
@@ -365,7 +372,7 @@ textarea{
   color: #10898C;
   margin: 10px 0 20px 0;
   font-size: 20px;
-  font-family: Ananda;
+  font-family: 'Ananda Black Regular';
 }
 
 /* --------- PAGE MES KINE ---------*/
@@ -663,7 +670,7 @@ textarea{
 }
 
 .landing-titre{
-  font-family: Ananda;
+  font-family: 'Ananda Black Regular';
   color: #10898C;
   font-weight: normal;
   font-size: 18px;
@@ -697,7 +704,7 @@ textarea{
 }
 
 .exercice-nom{
-  font-family: Ananda;
+  font-family: 'Ananda Black Regular';
   color: #10898C;
   font-weight: normal;
   font-size: 18px;
