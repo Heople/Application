@@ -13,6 +13,7 @@ app.controller('CompteController', function($scope) {
   $scope.adresse = "";
   $scope.email = "";
   $scope.antecedent = "";
+  $scope.heure = "";
 
   //Appel Ajax, récupération des exercices en fonction du profil.
   $.ajax({
@@ -37,6 +38,8 @@ app.controller('CompteController', function($scope) {
         $scope.tel = item.Tel;
         $scope.antecedent = item.Antecedents;
         $scope.naissance = item.DatedeNaissance;
+        $scope.heure = item.heure_notif;
+        console.log(item.heure_notif);
 
 
       });

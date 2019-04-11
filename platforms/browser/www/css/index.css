@@ -164,9 +164,10 @@ nav{
 }
 
 nav > a > img{
-  margin: 5px 0 0 0;
+  margin: 0px 0 0 0;
   width: 25px;
   height: 25px;
+  z-index: 3;
 }
 
 .nav-active{
@@ -289,6 +290,12 @@ textarea{
   padding: 7px;
 }
 
+.fixed{
+  position: absolute fixed;
+  top: 0;
+  left: 0;
+}
+
 .diff{
   width: 90%;
   margin: 0 auto;
@@ -302,6 +309,11 @@ textarea{
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
+
+}
+
+#commentaire{
+  height: 100px;
 }
 
 .exit{
@@ -329,7 +341,7 @@ textarea{
 
 .video{
   width: 90%;
-  height: auto;
+  height: 180px;
   margin: 35px auto;
 }
 
@@ -473,7 +485,7 @@ textarea{
   align-items: center;
   width: 100%;
   height: auto;
-  background-color: rgba(90, 168,160,0.3);
+  background-color: #cde5e2;
   height: 80px;
   border-radius: 0 0 9px 9px;
   color: #45847C;
@@ -593,6 +605,47 @@ textarea{
   padding-top: 25px;
 }
 
+
+.rappel{
+  width: 90%;
+  height: auto;
+  margin: 0 auto 0 auto;
+  background-color: white;
+  border-radius: 9px 9px 0 0;
+  padding: 25px 0 35px 0 !important;
+}
+
+.reseaux{
+  width: 90%;
+  height: 140px;
+  margin: 2px auto 0;
+  border-radius: 0 0 9px 9px;
+  background-color: #cde5e2;
+  color: #5AA8A0;
+  padding: 40px 0 0 0;
+}
+
+.icone-handler{
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.icone-handler img{
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+h5{
+  width: 100%;
+  text-align: center;
+  color: #5AA8A0;
+}
+
 .antecedent-titre{
   color: #878787;
   padding-left: 5px;
@@ -604,7 +657,7 @@ textarea{
   color: #35847A;
   font-size: 14px;
   margin: 10px;
-
+  text-align: justify;
 }
 
 .antecedent{
@@ -630,6 +683,27 @@ textarea{
   position: relative;
   top: 13px;
   margin-right: 10px;
+}
+
+
+.rappel-texte{
+  margin: 0 20px 0 0;
+}
+
+.input-time{
+  border: 0;
+  width: 80px;
+  background-color: white;
+  color: #67C6C0;
+  font-size: 18px;
+  position: relative;
+  top: 1px;
+}
+
+.rappel-notif{
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .notif-texte{
@@ -683,6 +757,7 @@ textarea{
   color: #939393;
   font-size: 15px;
   width: 80%;
+  text-align: justify;
 }
 
 .exercice-titre{
@@ -699,8 +774,10 @@ textarea{
 }
 
 .exercice-numero{
-  float: right;
-  margin: 20px 30px;
+  /* margin: 20px 30px; */
+  position :absolute;
+  margin-top: 10px;
+  right: 20px;
 }
 
 .exercice-nom{
@@ -708,24 +785,26 @@ textarea{
   color: #10898C;
   font-weight: normal;
   font-size: 18px;
+  padding: 0 0 0 20px;
+  width: 80%;
   /* margin: 40px 0 10px 30px; */
 
 }
 
 .exercice-description{
-  margin: 10px 20px;
+  margin: 10px 20px 30px 20px;
   font-size: 15px;
   color: #939393;
   font-size: 15px;
   padding: 10px;
-  height: 60px;
+  height: 12vh;
   overflow: scroll;
 }
 
 .header-programme{
   width: 100%;
   background: linear-gradient(to right, #67C6C0, #10898C);
-  height: 75px;
+  height: 60px;
   box-shadow: 0 0px 8px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -733,7 +812,7 @@ textarea{
   width: 100%;
   margin: 0;
   text-align: center;
-  line-height: 75px;
+  line-height: 60px;
   color: white;
   font-family: Calibri;
   font-weight: normal;
@@ -760,11 +839,9 @@ textarea{
 }
 
 
-
-
 .video-programme{
-  width: 340px;
-  height: 220px;
+  width: 90%;
+  height: 180px;
   margin: 15px auto 0 auto;
 }
 
@@ -795,17 +872,110 @@ textarea{
 
 .previous-next-handler{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row-reverse;
+  align-items: center;
   margin: 20px 0 0 0;
+  height: 10%;
 }
 
 
 .next{
-  width: 35px;
-  height: 35px;
-  margin: 0 30px;
+  width: 40px;
+  height: 40px;
+  margin: 0 50px;
 }
+
+#send-feedback{
+  display: block;
+  width: 150px;
+  height: 40px;
+  border: 0;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+#send-feedback:active{
+  background-color: #10898C;
+}
+
+.landing-titre2{
+  font-family: 'Ananda Black Regular';
+  color: #10898C;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+/* OVERLAY */
+
+.overlay-valider-programme{
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+.texte-overlay-fb{
+  width: 80%;
+  height: 200px;
+  background-color: white;
+}
+
+.texte-overlay-fb > h3{
+  color: #62e097;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#retour-home{
+  margin: 20px auto;
+  border: 0;
+  display: block;
+  width: 150px;
+  height: 40px;
+  border: 0;
+  font-weight: bold;
+  margin: 0 auto;
+  color: white;
+  background-color: #4BB5C1;
+}
+
+#retour-home:active{
+  background-color: #10898C;
+}
+
+.rdv-container{
+  width: 90%;
+  height: 60vh;
+  background-color: white;
+  margin: 40px auto;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.rdv{
+  margin: 30px 0;
+}
+
+.rdv p{
+  margin: 5px 0;
+}
+
+.description-rdv{
+  text-align: justify;
+  width: 250px;
+  word-wrap: normal;
+}
+
 
 
 .switch {

@@ -15,6 +15,9 @@
 <body ng-app="ProgrammeGenerator" class="">
   <!-- Rattachement au controller ProgrammeController -->
   <div class="super-programme-container" ng-controller="ProgrammeController">
+    <!-- <div class="overlay-valider-programme">
+
+    </div> -->
     <!-- Le bloc landing-programme contient le morceau de la page que l'utilisateur va voir en premier. Comporte Le nom di  programme, la liste des exercices et un bouton pour commencer le programme. -->
     <div class="header-programme">
       <h1 id="-1" class="header-titre">Mon programme</h1>
@@ -29,7 +32,7 @@
       <!-- Pour chaque exercice (ou objet dans le tableau JSON), Angular va créer un élement li et y mettre le nom d'un exercice. -->
       <h3 class="exercice-titre">Exercices</h3>
       <ol class="list-exercice">
-        <li class="exo-item" ng-repeat="exercice in programme"> {{exercice.nom}}</li>
+        <li class="exo-item" ng-repeat="exercice in programme"> {{exercice.Nom_exo}}</li>
       </ol>
 
       <a href="#0" ng-click="setFirstexercice(0)"><img id="button-go" src="./img/icones/GO.svg" alt="Boutton commencer le programme"></a>
@@ -40,9 +43,9 @@
       <div id="{{exercice.id}}" class="header-programme">
         <h1 class="header-titre">Mon programme</h1>
       </div>
-      <span class="exercice-numero">Exercice {{exercice.id+1}}</span>
-      <h3 class="exercice-nom">{{exercice.nom}}</h3>
-      <p class="exercice-description">{{exercice.description}}</p>
+      <span class="exercice-numero">Exercice {{exercice.id+1}} / {{nb}}</span>
+      <h3 class="exercice-nom">{{exercice.Nom_exo}}</h3>
+      <p class="exercice-description">{{exercice.Description}}</p>
 
       <div class="video-programme">
         <ng-youtube-embed
@@ -51,68 +54,58 @@
             color="black"
             disablekb="true"
             end="20"
-            width="340px"
-            height="220px"
+            width="320px"
+            height="180px"
               >
         </ng-youtube-embed>
       </div>
       <div class="rep-time">
         <div class="rep">
-          {{exercice.repetition}} répétitions
+          {{exercice.Repetition}} répétitions
         </div>
         <div class="separateur3"></div>
         <div class="time">
-          {{exercice.duree}} .s / répétition
+          {{exercice.Duree}} .s / répétition
         </div>
       </div>
 
       <div class="previous-next-handler">
-        <a href="#{{exercice.id+1}}" ng-hide="$last" ng-click="setNextVideo(exercice.id+2)" ><img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
-        <a href="#fin" ng-if="$last"><img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant"></a>
-        <a href="#{{exercice.id-1}}" ng-hide="$last" ng-click="setNextVideo(exercice.id-1)" ><img class="next" src="img/icones/Precedent.svg" alt="Bouton aller à l'exercice precedent"></a>
+        <a href="#{{exercice.id+1}}" ng-hide="$last" ng-click="setNextVideo(exercice.id+1)">
+          <img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant">
+        </a>
+
+        <a href="feedback.html" ng-show="$last" ng-click="setNextVideo(exercice.id+1)">
+          <img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant">
+        </a>
+
+        <a href="#{{exercice.id-1}}" ng-hide="" ng-click="setNextVideo(exercice.id-1)" >
+          <img class="next" src="img/icones/Precedent.svg" alt="Bouton aller à l'exercice precedent">
+        </a>
+
+        <!-- <a href="#fin">
+          <img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant">
+        </a> -->
+
+
       </div>
 
 
 
 
 
-      <!-- Menu de navigation. -->
-      <nav>
-        <a href="home.html"><img src="img/icones/Accueil_ON.svg" /></a>
-        <a href="rdv.html"><img src="img/icones/RDV_OFF.svg" /></a>
-        <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
-        <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
-      </nav>
+
     </div>
-
-    <div class="exercices-container">
-      <div id="fin" class="header-programme">
-        <h1 class="header-titre">Mon programme</h1>
-        <h3 class="landing-titre">Programme personnalisé</h3>
-        <p class="fin-texte">
-          Fin du programme.
-        </p>
-        <div id="fin-programme">
-
-          <div class="diff">
-            <span class="diff-texte">Difficultées du programme</span>
-            <div class="emote-handler">
-              <img id="lvl1"src="img/icones/01.svg" alt="visage triste" class="visage">
-              <img id="lvl2"src="img/icones/02.svg" alt="visage moins triste" class="visage">
-              <img id="lvl3"src="img/icones/03.svg" alt="visage sourire" class="visage">
-              <img id="lvl4"src="img/icones/04.svg" alt="visage heureux" class="visage">
-            </div>
-
-          </div>
-
-          <textarea id="commentaire" placeholder="Commentaire (optionnel)" style="resize: none;" name="name" rows="8" cols="30"></textarea>
-          <button id="send-feedback" type="button" name="button">Envoyer</button>
-          <a href="home.html"><img class="next exit" src="img/icones/suivant.svg"></a>
-        </div>
-      </div>
-    </div>
-
   </div>
+
+  <!-- Menu de navigation. -->
+  <nav>
+    <a href="home.html"><img src="img/icones/Accueil_ON.svg" /></a>
+    <a href="rdv.html"><img src="img/icones/RDV_OFF.svg" /></a>
+    <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
+    <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
+  </nav>
+
+
 
 
   <script type="text/javascript" src="cordova.js"></script>

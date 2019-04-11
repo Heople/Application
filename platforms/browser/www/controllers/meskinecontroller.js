@@ -5,7 +5,6 @@ app.controller('KineController', function($scope) {
   //Récupération des cookies, certains seront utilisées lors des requêtes.
   var cookie = Cookies.get();
   $scope.idCookie = cookie.id;
-  console.log("ok");
 
   $scope.nom = "e";
   $scope.email = "e";
@@ -24,15 +23,12 @@ app.controller('KineController', function($scope) {
     },
     // Fonction lancée à la fin de traitement PHP.
     success: function(data) {
-      console.log(data.resultat);
       $scope.kine = data.resultat;
-      console.log($scope.kine);
       angular.forEach($scope.kine, function(item) {
         $scope.nom = item.Nom_kine;
         $scope.telephone = item.Tel_kine;
         $scope.adresse = item.Adresse;
         $scope.email = item.E_mail;
-        console.log($scope.email);
 
 
       });
@@ -44,10 +40,21 @@ app.controller('KineController', function($scope) {
 
 
 
-
-
-
-
   });
+
+  $('.telephone-kine').click(function(){
+    var tel = $('#number').html();
+    console.log("truc");
+    console.log(tel);
+    window.plugins.CallNumber.callNumber(onSuccess, onError, "0602655083");
+  });
+
+  function onSuccess(result){
+  console.log("Success:"+result);
+}
+
+function onError(result) {
+  console.log("Error:"+result);
+}
 
 });

@@ -33,19 +33,19 @@
 
       </div>
       <div class="telephone-container">
-        <p class="telephone-compte"><i class="fas fa-phone"></i>Appeler au <strong>{{tel}}</strong></p>
+        <p class="telephone-compte"><i class="fas fa-phone"></i><strong>{{tel}}</strong></p>
       </div>
     </div>
 
     <div class="antecedent">
-      <h3 class="antecedent-titre">Antécedent</h3>
+      <h3 class="antecedent-titre">Antécédent</h3>
       <p class="antecedent-texte">{{antecedent}}</p>
     </div>
 
-    <div class="compte-container">
+    <div class="rappel">
       <h1 class="parametre-titre"><img class="icone-parametre" src="img/icones/Parametres.svg" alt="logo paramètre"> Paramètres</h1>
       <div class="switch-notif">
-        <span class="notif-texte">Notifications </span>
+        <span class="notif-texte">Notifications</span>
         <label class="switch">
           <input type="checkbox" checked>
           <span class="slider round"></span>
@@ -54,8 +54,20 @@
 
       <div class="rappel-notif">
         <span class="rappel-texte">Heure de rappel </span>
-        <input type="time" name="heure-rappel" valu>
+        <input class="input-time" value="{{heure}}" type="time" name="heure-rappel" valu>
       </div>
+    </div>
+    <div class="reseaux">
+      <div class="icone-handler">
+        <a href="" onclick="window.open('https://www.facebook.com/eKineMMI', '_system'); return false;" target="_blank"><img src="img/icones/Facebook.svg" alt="Logo Facebook"></a>
+        <a href="" onclick="window.open('http://ekine.iut-velizy.uvsq.fr/', '_system'); return false;" target="_blank"><img src="img/icones/Internet.svg" target="_blank" alt="Logo Internet"></a>
+        <a href="" onclick="window.open('mailto:agence.heople@gmail.com', '_system'); return false;"><img src="img/icones/Mail.svg" alt="Logo Mail"></a>
+        <a onclick="window.open('https://www.instagram.com/heople_mmi/?hl=fr', '_system'); return false;"><img src="img/icones/Instagram.svg" target="_blank" alt="Logo Instagram"></a>
+      </div>
+      <h5>Nous contacter</h5>
+    </div>
+    <div class="cgu">
+
     </div>
   </div>
 

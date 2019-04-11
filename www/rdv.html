@@ -12,16 +12,27 @@
 
 </head>
 
-<body>
+<body ng-app="RDV" class="background-compte">
 
 
-
+<div class="super-compte-container" ng-controller="rdvcontroller">
+  <h1 class="h1-compte">MES RENDEZ-VOUS</h1>
+  <span class="separateur-compte"></span>
+  <div class="rdv-container">
+    <h2>Mes prochains rendez-vous</h2>
+    <div ng-repeat="rdv in planning" class="rdv">
+      <p style="color: #4BB5C1; font-weight: bold;">{{rdv.Date}} - {{rdv.Heure}}</p>
+      <strong>Description</strong> : <br>
+      <p class="description-rdv">{{rdv.ProchaineSeance}}</p>
+    </div>
+  </div>
+</div>
 
 
 
   <!-- Menu de navigation. -->
   <nav>
-    <a href="home.html"><img src="img/icones/Accueil_ON.svg" /></a>
+    <a href="home.html"><img src="img/icones/Accueil_OFF.svg" /></a>
     <a href="rdv.html"><img src="img/icones/RDV_ON.svg" /></a>
     <a href="meskine.html"><img src="img/icones/MonKine_OFF.svg" /></a>
     <a href="compte.html"><img src="img/icones/MonEspace_OFF.svg" /></a>
