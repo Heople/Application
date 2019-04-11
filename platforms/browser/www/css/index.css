@@ -43,17 +43,17 @@ a{
 }
 
 .background-splash{
-  background-color: #b6eaea;
+  /* background-color: #b6eaea; */
 }
 
 .splash{
-  width: 150px;
+  /* width: 150px;
   height: 150px;
-  margin-top: calc((100vh/2) - 100px);
+  margin-top: calc((100vh/2) - 100px); */
 }
 
 .h-splash{
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 /* --------- LOGIN PAGE ---------*/
@@ -966,14 +966,88 @@ h5{
   margin: 30px 0;
 }
 
+.rdv-container h2{
+  margin: 5px 0 10px 0 ;
+}
+
 .rdv p{
   margin: 5px 0;
 }
 
 .description-rdv{
-  text-align: justify;
   width: 250px;
   word-wrap: normal;
+}
+
+.overlay-cgu{
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  color: white;
+  background-color: rgb(103,198,192);
+}
+
+.cgu{
+  display: block;
+  width: 90%;
+  height: 35px;
+  background-color: white;
+  border: 0;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+
+.quit-head{
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(103,198,192);
+}
+
+#quit-cgu{
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 50px;
+  opacity: 0.9;
+}
+
+.overlay-cgu h2{
+  padding-left: 25px;
+  width: 95%;
+}
+
+.overlay-cgu h1{
+  color: white;
+  text-align: center;
+  margin: 70px 0 0 0;
+}
+
+.overlay-cgu p{
+  width: 86%;
+  text-align: justify;
+  margin: 20px auto;
+  font-size: 17px;
+}
+
+.cgu:active{
+  background-color: #cde5e2;
+}
+
+.cgu-texte{
+  overflow-y: scroll;
+  height: 95vh;
+}
+
+.mentions{
+  text-align: center;
+  width: 100%;
+  color: rgba(0,0,0,0.6)
 }
 
 

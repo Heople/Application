@@ -10,7 +10,7 @@
     <content src="index.html" />
     <gap:plugin name="pushbots-cordova-plugin" source="npm" spec="1.6.x" />
     <access origin="*" />
-    <allow-navigation href="https://*youtube.com/*" />
+    <allow-navigation href="https://*youtu*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

@@ -7,6 +7,15 @@ app.controller('CompteController', function($scope) {
   $scope.idCookie = cookie.id;
   console.log("ok");
 
+
+  $('.cgu').click(function(){
+    $('.overlay-cgu').css("display","block");
+  });
+
+  $('#quit-cgu').click(function(){
+    $('.overlay-cgu').css("display","none");
+  });
+
   $scope.nom = "";
   $scope.prenom = "";
   $scope.email = "";

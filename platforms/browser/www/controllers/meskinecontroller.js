@@ -42,19 +42,19 @@ app.controller('KineController', function($scope) {
 
   });
 
-  $('.telephone-kine').click(function(){
-    var tel = $('#number').html();
-    console.log("truc");
-    console.log(tel);
-    window.plugins.CallNumber.callNumber(onSuccess, onError, "0602655083");
-  });
-
-  function onSuccess(result){
-  console.log("Success:"+result);
-}
-
-function onError(result) {
-  console.log("Error:"+result);
-}
+//   $('.telephone-kine').click(function(){
+//     var tel = $('#number').html();
+//     console.log("truc");
+//     console.log(tel);
+//     window.plugins.CallNumber.callNumber(onSuccess, onError, "0602655083");
+//   });
+//
+//   function onSuccess(result){
+//   console.log("Success:"+result);
+// }
+//
+// function onError(result) {
+//   console.log("Error:"+result);
+// }
 
 });

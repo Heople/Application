@@ -10,7 +10,7 @@ app.controller('rdvcontroller', function($scope) {
   //Appel Ajax, récupération des rendez-vous en fonction du profil.
   $.ajax({
     type: 'POST',
-    url: "php/rdv.php",
+    url: "http://ekine.iut-velizy.uvsq.fr/app/rdv.php",
     //Type de data au retour des résultats.
     dataType: 'json',
     data: {
@@ -21,9 +21,6 @@ app.controller('rdvcontroller', function($scope) {
     success: function(data) {
       $scope.planning = data;
       console.log(data);
-      console.log($scope.planning);
-      console.log($scope.planning);
-      console.log($scope.planning);
       $scope.$digest();
       }
       //Mise à jour du scope.
