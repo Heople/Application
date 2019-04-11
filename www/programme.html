@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="static">
 
 <head>
   <meta charset="utf-8" />
@@ -14,7 +14,7 @@
 
 <body ng-app="ProgrammeGenerator" class="static">
   <!-- Rattachement au controller ProgrammeController -->
-  <div class="super-programme-container" ng-controller="ProgrammeController">
+  <div class="super-programme-container static" ng-controller="ProgrammeController">
     <!-- <div class="overlay-valider-programme">
 
     </div> -->
@@ -39,7 +39,7 @@
     </div>
 
     <!-- Même principe qu'au dessus, à l'exception qu'ici on crée un bloc entier, de la taille du device de l'utilisateur, qui va contenir toutes les informations d'un exercice. Ainsi, on crée un enchainement d'exercice sur la même page. En lockant le scroll, on simule alors une navigation grâce à des liens vers des ancres (chaque bloc d'exercice étant composé d'un lien pour aller vers l'exercice suivant, et d'un id pour être atteignable). -->
-    <div class="exercices-container" ng-repeat="exercice in programme">
+    <div class="exercices-container static" ng-repeat="exercice in programme">
       <div id="{{exercice.id}}" class="header-programme">
         <h1 class="header-titre">Mon programme</h1>
       </div>
@@ -69,7 +69,7 @@
         </div>
       </div>
 
-      <div class="previous-next-handler">
+      <div class="previous-next-handler static">
         <a href="#{{exercice.id+1}}" ng-hide="$last" ng-click="setNextVideo(exercice.id+1)">
           <img class="next" src="img/icones/Suivant.svg" alt="Bouton aller à l'exercice suivant">
         </a>
